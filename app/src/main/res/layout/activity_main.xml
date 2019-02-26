@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".MainActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <TextView
+            android:id="@+id/copilot_title"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:text="Co-Pilot"
+            android:textAlignment="center"
+            android:textColor="#FFF"
+            android:textSize="80dp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/calculations_button"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/copilot_title"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/cal_icon" />
+
+        <TextView
+            android:id="@+id/calculations_text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/calculations_button"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="70dp"
+            android:textAlignment="center"
+            android:text="Calculations"
+            android:textColor="#FFF" />
+
+        <Button
+            android:id="@+id/dictionary_button"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/calculations_text"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/dictionary_icon" />
+
+        <TextView
+            android:id="@+id/dictionary_text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dictionary_button"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="70dp"
+            android:textAlignment="center"
+            android:text="Dictionary"
+            android:textColor="#FFF" />
+
+
+        <Button
+            android:id="@+id/awareness_button"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_below="@id/copilot_title"
+            android:layout_alignRight="@id/copilot_title"
+            android:background="@drawable/awareness_icon" />
+
+        <TextView
+            android:id="@+id/awareness_text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/copilot_title"
+            android:layout_below="@id/awareness_button"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="70dp"
+            android:textAlignment="center"
+            android:text="Awareness"
+            android:textColor="#FFF" />
+
+        <Button
+            android:id="@+id/logbook_button"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/awareness_text"
+            android:layout_alignRight="@id/copilot_title"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="80dp"
+            android:background="@drawable/logbook_icon"
+            tools:ignore="UnknownId" />
+
+        <TextView
+            android:id="@+id/logbook_text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/copilot_title"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="70dp"
+            android:layout_below="@id/logbook_button"
+            android:textAlignment="center"
+            android:text="LogBook"
+            android:textColor="#FFF" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
