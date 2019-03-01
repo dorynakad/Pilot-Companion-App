@@ -1,8 +1,18 @@
 <component name="libraryTable">
   <library name="Gradle: android.arch.lifecycle:livedata:1.1.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/59c139e35b507aecd09cfc34deecefe6/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/59c139e35b507aecd09cfc34deecefe6/jars/classes.jar!/" />
+<<<<<<< HEAD
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/838d7e0c6ad6bb4e5fb5a20e10b69106/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/838d7e0c6ad6bb4e5fb5a20e10b69106/res" />
+=======
+<<<<<<< HEAD
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/838d7e0c6ad6bb4e5fb5a20e10b69106/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/838d7e0c6ad6bb4e5fb5a20e10b69106/res" />
+=======
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/62dd269fb5e63ad65c05f78c62aa8bae/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/62dd269fb5e63ad65c05f78c62aa8bae/res" />
+>>>>>>> Dory
+>>>>>>> Dory
     </CLASSES>
     <JAVADOC />
     <SOURCES>
