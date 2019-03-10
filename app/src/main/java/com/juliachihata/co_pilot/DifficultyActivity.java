@@ -58,6 +58,11 @@ public class DifficultyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //back button
+        getSupportActionBar().setTitle("Awareness");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         setContentView(R.layout.activity_difficulty);
 
         efttext = findViewById(R.id.eft_text);

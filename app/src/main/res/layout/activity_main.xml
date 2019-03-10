@@ -15,7 +15,7 @@
             android:id="@+id/copilot_title"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:text="Co-Pilot"
             android:textAlignment="center"
             android:textColor="#FFF"
@@ -28,7 +28,7 @@
             android:layout_height="100dp"
             android:layout_below="@id/copilot_title"
             android:layout_marginLeft="80dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/cal_icon" />
 
         <TextView
@@ -69,7 +69,7 @@
             android:layout_height="100dp"
             android:layout_below="@id/copilot_title"
             android:layout_alignRight="@id/copilot_title"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="80dp"
             android:background="@drawable/awareness_icon" />
 

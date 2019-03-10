@@ -92,6 +92,10 @@ public class AwarenessActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_awareness);
 
+        //back button
+        getSupportActionBar().setTitle("Awareness");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         if(check == 0){
             Intent intent= new Intent(AwarenessActivity.this, DifficultyActivity.class);
             startActivity(intent);
