@@ -1,12 +1,19 @@
 package com.juliachihata.co_pilot;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
+import com.juliachihata.co_pilot.AwarenessActivity;
 
 public class DifficultyActivity extends AppCompatActivity {
 
@@ -18,26 +25,38 @@ public class DifficultyActivity extends AppCompatActivity {
     TextView diftext;
     SeekBar difbar;
     Button savebutton;
+    int hours;
+    int minutes;
+    int total;
+    int difint;
+    View view;
+    AwarenessActivity awarenessActivity = new AwarenessActivity();
 
 
     public void updateeft(int eft){
-        int hours = eft/4;
-        int minutes = (eft*15) - (hours*60);
+        hours = eft/4;
+        minutes = (eft*15) - (hours*60);
         String minString = Integer.toString(minutes);
         String hourString = Integer.toString(hours);
+        total = hours*3600 + minutes*60;
         if(minutes <= 9){
             minString = "0" + minString;
         }
         if(hours <= 9){
             hourString = "0" + hourString;
         }
-        efttext.setText(hourString + ":" + minString);
+        efttext.setText(hourString + ":" + minString + ":00");
+
+        saveinfo();
+        savebutton.setClickable(true);
     }
 
 
     public void updatedif(int dif){
         String difficulty = "MEDIUM";
-
+        difint = dif;
+        saveinfo();
+        savebutton.setClickable(true);
         if(dif == 0){
             difficulty = "EASY";
         }
@@ -47,10 +66,19 @@ public class DifficultyActivity extends AppCompatActivity {
         else if(dif == 2){
             difficulty = "HARD";
         }
-
         diftext.setText(difficulty);
     }
 
+
+    public void saveinfo(){
+        SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("eft",total);
+        editor.putInt("difficulty",difint);
+        editor.putBoolean("settingsaved",true);
+        savebutton.setClickable(false);
+        editor.commit();
+    }
 
 
 
@@ -58,20 +86,16 @@ public class DifficultyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //back button
-        getSupportActionBar().setTitle("Awareness");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         setContentView(R.layout.activity_difficulty);
 
         efttext = findViewById(R.id.eft_text);
         eftbar = findViewById(R.id.eft_bar);
         diftext = findViewById(R.id.difficulty_text);
         difbar = findViewById(R.id.difficulty_bar);
+        savebutton = findViewById(R.id.savedifficulty_button);
 
         eftbar.setMax(20);
-        eftbar.setMin(1);
+        eftbar.setMin(2);
         eftbar.setProgress(10);
 
         difbar.setMax(2);
@@ -85,12 +109,10 @@ public class DifficultyActivity extends AppCompatActivity {
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
 
@@ -112,5 +134,13 @@ public class DifficultyActivity extends AppCompatActivity {
             }
         });
 
+
+        savebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+
+        });
     }
 }

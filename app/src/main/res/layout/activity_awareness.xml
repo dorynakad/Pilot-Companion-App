@@ -56,7 +56,6 @@
         android:layout_marginRight="131dp"
         android:layout_marginBottom="54dp"
         android:background="@android:color/holo_green_dark"
-        android:onClick="buttonClicked"
         android:text="Start Flight"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
@@ -79,5 +78,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tr_edittext" />
+
+    <ImageButton
+        android:id="@+id/settings_button"
+        android:layout_width="71dp"
+        android:layout_height="69dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/settingsgears"
+        tools:layout_editor_absoluteX="336dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,6 +1,9 @@
 package com.juliachihata.co_pilot;
 
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.CountDownTimer;
 import android.support.annotation.RequiresApi;
@@ -8,8 +11,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AwarenessActivity extends AppCompatActivity {
 
@@ -17,55 +22,88 @@ public class AwarenessActivity extends AppCompatActivity {
     SeekBar timerSeekBar;
     Boolean counterIsActive = false;
     Button goButton;
+    ImageButton settingsButton;
     int red = android.R.color.holo_red_dark;
     int green = android.R.color.holo_green_dark;
     CountDownTimer countDownTimer;
-    int check = 0;
+    long endTime;
+    long timeleftms;
+    int eft, difficulty;
+
 
     public void resetTimer() {
         timerTextView.setText("00:10:00");
         timerSeekBar.setProgress(600);
         timerSeekBar.setEnabled(true);
-        countDownTimer.cancel();
         goButton.setText("Start Flight");
         goButton.setBackgroundResource(green);
+        settingsButton.setClickable(true);
+        countDownTimer.cancel();
         counterIsActive = false;
+        SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("settingsaved",false);
     }
 
 
-    public void buttonClicked(View view) {
+    private void startTimer() {
+        endTime = System.currentTimeMillis() + timeleftms;
 
-        if (counterIsActive) {
+        countDownTimer = new CountDownTimer(timeleftms, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timeleftms = millisUntilFinished;
+                updateTimer((int)millisUntilFinished/1000);
+            }
 
-            resetTimer();
+            @Override
+            public void onFinish() {
+                counterIsActive = false;
+                resetTimer();
+            }
+        }.start();
 
-        } else {
-
-            counterIsActive = true;
-            timerSeekBar.setEnabled(false);
-            goButton.setBackgroundResource(red);
-             goButton.setText("Stop Flight");
-
-            countDownTimer = new CountDownTimer(timerSeekBar.getProgress() * 1000 + 100, 1000) {
-
-                @Override
-                public void onTick(long l) {
-                    updateTimer((int) l / 1000);
-                }
-
-                @Override
-                public void onFinish() {
-                    resetTimer();
-                }
-            }.start();
-        }
+        counterIsActive = true;
+        settingsButton.setClickable(false);
+        timerSeekBar.setEnabled(false);
+        goButton.setBackgroundResource(red);
+        goButton.setText("Stop Flight");
     }
+
+/*
+    public void startmTimer(){
+        countDownTimer = new CountDownTimer(timeleftms  + 100, 1000) {
+            @Override
+            public void onTick(long l) {
+                updateTimer((int) l / 1000);
+            }
+
+            @Override
+            public void onFinish() {
+                resetTimer();
+            }
+        }.start();
+
+        counterIsActive = true;
+        settingsButton.setClickable(false);
+        timerSeekBar.setEnabled(false);
+        goButton.setBackgroundResource(red);
+        goButton.setText("Stop Flight");
+    }
+
+
+
+    counterIsActive = true;
+        settingsButton.setClickable(false);
+        timerSeekBar.setEnabled(false);
+        goButton.setBackgroundResource(red);
+        goButton.setText("Stop Flight"); */
 
     public void updateTimer(int secondsLeft) {
+        timeleftms = secondsLeft * 1000;
         int hours = secondsLeft / 3600;
         int minutes = (secondsLeft / 60) - (hours * 60);
         int seconds = secondsLeft - (minutes * 60) - (hours * 3600);
-
 
         String secondString = Integer.toString(seconds);
         String thirdString = Integer.toString(minutes);
@@ -80,34 +118,81 @@ public class AwarenessActivity extends AppCompatActivity {
         if (hours <= 9) {
             fourthString = "0" + fourthString;
         }
-
-
-
         timerTextView.setText(fourthString+ ":" + thirdString + ":" + secondString);
+
+        if(secondsLeft <= 10 && secondsLeft > 0){
+            timerTextView.setText(secondString);
+        }
+        else if(secondsLeft == 0){
+
+        }
+
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_awareness);
+    protected void onStop() {
+        super.onStop();
+        SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("Active",counterIsActive);
+        editor.putLong("endtime", endTime);
+        editor.putLong("timeleft", timeleftms);
+        editor.commit();
 
-        //back button
-        getSupportActionBar().setTitle("Awareness");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(countDownTimer != null){
+            countDownTimer.cancel();
+        }
+    }
 
-        if(check == 0){
+    @Override
+    protected void onStart() {
+        super.onStart();
+        SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        boolean settings = preferences.getBoolean("settingsaved",false);
+        timeleftms = preferences.getLong("timeleft", 600*1000);
+        counterIsActive = preferences.getBoolean("Active",false);
+        if( counterIsActive == false && settings == false){
             Intent intent= new Intent(AwarenessActivity.this, DifficultyActivity.class);
             startActivity(intent);
         }
 
+        eft = preferences.getInt("eft",3600);
+        difficulty = preferences.getInt("difficulty",1);
+        timerSeekBar.setMax(eft/2);
+        timerSeekBar.setMin(600);
+        timerSeekBar.setProgress(600);
+        updateTimer(timerSeekBar.getProgress());
+
+        if(counterIsActive){
+            endTime = preferences.getLong("endtime", 0);
+            timeleftms = endTime - System.currentTimeMillis();
+
+            if(timeleftms < 0){
+                timeleftms = 0;
+                counterIsActive = false;
+                resetTimer();
+            }
+            else {
+                startTimer();
+            }
+
+
+
+
+        }
+
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_awareness);
         timerSeekBar = findViewById(R.id.tr_seekbar);
         timerTextView = findViewById(R.id.tr_edittext);
         goButton = findViewById(R.id.startflight_button);
-
-        timerSeekBar.setMax(36000);
-        timerSeekBar.setMin(600);
-        timerSeekBar.setProgress(600);
+        settingsButton = findViewById(R.id.settings_button);
 
         timerSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -117,13 +202,35 @@ public class AwarenessActivity extends AppCompatActivity {
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
+
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(AwarenessActivity.this, DifficultyActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        goButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (counterIsActive == true) {
+                    resetTimer();
+                }
+
+                else {
+                    endTime = System.currentTimeMillis()/1000 + timerSeekBar.getProgress();
+                    startTimer();
+                }
+            }
+        });
+
+
     }
 }
