@@ -8,15 +8,76 @@
     android:background="@drawable/bg"
     >
 
+    <TextView
+        android:id="@+id/tr_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="125dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginLeft="145dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginRight="145dp"
+        android:layout_marginBottom="196dp"
+        android:text="00:10:00"
+        android:textColor="@android:color/white"
+        android:textSize="100sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/startflight_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tr_textview" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/tr_textview"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Awareness Activity"
-        android:textAlignment="center"
-        android:textColor="#FFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="154dp"
+        android:layout_marginLeft="154dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="154dp"
+        android:layout_marginRight="154dp"
+        android:layout_marginBottom="1dp"
+        android:text="Time Remaining"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tr_edittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/startflight_button"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginRight="131dp"
+        android:layout_marginBottom="54dp"
+        android:background="@android:color/holo_green_dark"
+        android:onClick="buttonClicked"
+        android:text="Start Flight"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <SeekBar
+        android:id="@+id/tr_seekbar"
+        style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tr_edittext" />
+
 </android.support.constraint.ConstraintLayout>

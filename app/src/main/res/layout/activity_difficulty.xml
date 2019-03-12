@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DifficultyActivity"
+    android:background="@drawable/bg">
+
+    <TextView
+        android:id="@+id/eft_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="106dp"
+        android:layout_marginLeft="106dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginRight="107dp"
+        android:layout_marginBottom="10dp"
+        android:text="Estimated Flight Time"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/eft_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <SeekBar
+        android:id="@+id/eft_bar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="375dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:max="20"
+        android:progress="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eft_text" />
+
+    <TextView
+        android:id="@+id/eft_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
+        android:layout_marginBottom="5dp"
+        android:text="02:30"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/eft_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eft_textview" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_marginStart="122dp"
+        android:layout_marginLeft="122dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginRight="123dp"
+        android:layout_marginBottom="4dp"
+        android:text="Awarness Mission"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/mission_group"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eft_bar" />
+
+
+    <RadioGroup
+        android:id="@+id/mission_group"
+        android:layout_width="325dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11">
+
+
+        <RadioButton
+            android:id="@+id/gesture_button"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/mission_selector"
+            android:button="@drawable/barrow"
+            android:padding="10dp"
+            android:shape="ring"
+            android:text="    Gesture" />
+
+        <RadioButton
+            android:id="@+id/ari_button"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/mission_selector"
+            android:button="@drawable/bmath"
+            android:padding="10dp"
+            android:shape="ring"
+            android:text="    Arithmetic" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/md_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="126dp"
+        android:layout_marginLeft="126dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="126dp"
+        android:layout_marginRight="126dp"
+        android:layout_marginBottom="6dp"
+        android:text="Mission Difficulty"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/difficulty_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mission_group" />
+
+    <SeekBar
+        android:id="@+id/difficulty_bar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="375dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginBottom="15dp"
+        android:max="2"
+        android:progress="1"
+        app:layout_constraintBottom_toTopOf="@+id/savedifficulty_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/difficulty_text" />
+
+    <TextView
+        android:id="@+id/difficulty_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="165dp"
+        android:layout_marginLeft="165dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="166dp"
+        android:layout_marginRight="166dp"
+        android:layout_marginBottom="3dp"
+        android:text="MEDIUM"
+        android:textColor="@android:color/white"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/difficulty_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/md_textview" />
+
+    <Button
+        android:id="@+id/savedifficulty_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginRight="131dp"
+        android:layout_marginBottom="23dp"
+        android:text="SAVE"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/difficulty_bar" />
+
+</android.support.constraint.ConstraintLayout>
