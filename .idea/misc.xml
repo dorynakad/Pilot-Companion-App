@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> Dory
+=======
+>>>>>>> Shurid
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -47,6 +51,8 @@
     </option>
 >>>>>>> Dory
 >>>>>>> Dory
+=======
+>>>>>>> Shurid
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
