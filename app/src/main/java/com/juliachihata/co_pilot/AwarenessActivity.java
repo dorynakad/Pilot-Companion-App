@@ -4,6 +4,7 @@ package com.juliachihata.co_pilot;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.CountDownTimer;
 import android.support.annotation.RequiresApi;
@@ -17,6 +18,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class AwarenessActivity extends AppCompatActivity {
+
+    //font
+    TextView normal_font;
+    Typeface myfont2;
 
     TextView timerTextView;
     SeekBar timerSeekBar;
@@ -189,6 +194,26 @@ public class AwarenessActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_awareness);
+
+
+        //back button
+        getSupportActionBar().setTitle("Back");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //font
+        normal_font = (TextView)findViewById(R.id.tr_edittext);
+        myfont2 = Typeface.createFromAsset(this.getAssets(),"fonts/GeosansLight.ttf");
+        normal_font.setTypeface(myfont2);
+
+        normal_font = (TextView)findViewById(R.id.tr_textview);
+        myfont2 = Typeface.createFromAsset(this.getAssets(),"fonts/GeosansLight.ttf");
+        normal_font.setTypeface(myfont2);
+
+        normal_font = (TextView)findViewById(R.id.settings_textview);
+        myfont2 = Typeface.createFromAsset(this.getAssets(),"fonts/GeosansLight.ttf");
+        normal_font.setTypeface(myfont2);
+
+
         timerSeekBar = findViewById(R.id.tr_seekbar);
         timerTextView = findViewById(R.id.tr_edittext);
         goButton = findViewById(R.id.startflight_button);
