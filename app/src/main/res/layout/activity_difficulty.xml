@@ -145,7 +145,7 @@
     <SeekBar
         android:id="@+id/difficulty_bar"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="375dp"
+        android:layout_width="225dp"
         android:layout_height="40dp"
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"

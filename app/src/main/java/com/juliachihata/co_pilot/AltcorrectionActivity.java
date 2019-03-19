@@ -9,5 +9,7 @@ public class AltcorrectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_altcorrection);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }

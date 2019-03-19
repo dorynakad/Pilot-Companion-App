@@ -83,9 +83,12 @@
         android:id="@+id/settings_button"
         android:layout_width="71dp"
         android:layout_height="69dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/settingsgears"
-        tools:layout_editor_absoluteX="336dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/settingsgears" />
+
 
 </android.support.constraint.ConstraintLayout>

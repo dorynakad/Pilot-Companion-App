@@ -1,20 +1,30 @@
 package com.juliachihata.co_pilot;
 
 
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Build;
 import android.os.CountDownTimer;
+import android.os.SystemClock;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class AwarenessActivity extends AppCompatActivity {
 
@@ -29,6 +39,7 @@ public class AwarenessActivity extends AppCompatActivity {
     long endTime;
     long timeleftms;
     int eft, difficulty;
+    AlarmManager alarmManager;
 
 
     public void resetTimer() {
@@ -48,6 +59,13 @@ public class AwarenessActivity extends AppCompatActivity {
 
     private void startTimer() {
         endTime = System.currentTimeMillis() + timeleftms;
+        Toast.makeText(getApplicationContext(),timeleftms+"",Toast.LENGTH_SHORT).show();
+        if(alarmManager == null){
+            startAlarm(timeleftms);
+        }
+        else{
+
+        }
 
         countDownTimer = new CountDownTimer(timeleftms, 1000) {
             @Override
@@ -69,35 +87,6 @@ public class AwarenessActivity extends AppCompatActivity {
         goButton.setBackgroundResource(red);
         goButton.setText("Stop Flight");
     }
-
-/*
-    public void startmTimer(){
-        countDownTimer = new CountDownTimer(timeleftms  + 100, 1000) {
-            @Override
-            public void onTick(long l) {
-                updateTimer((int) l / 1000);
-            }
-
-            @Override
-            public void onFinish() {
-                resetTimer();
-            }
-        }.start();
-
-        counterIsActive = true;
-        settingsButton.setClickable(false);
-        timerSeekBar.setEnabled(false);
-        goButton.setBackgroundResource(red);
-        goButton.setText("Stop Flight");
-    }
-
-
-
-    counterIsActive = true;
-        settingsButton.setClickable(false);
-        timerSeekBar.setEnabled(false);
-        goButton.setBackgroundResource(red);
-        goButton.setText("Stop Flight"); */
 
     public void updateTimer(int secondsLeft) {
         timeleftms = secondsLeft * 1000;
@@ -161,8 +150,10 @@ public class AwarenessActivity extends AppCompatActivity {
         eft = preferences.getInt("eft",3600);
         difficulty = preferences.getInt("difficulty",1);
         timerSeekBar.setMax(eft/2);
-        timerSeekBar.setMin(600);
-        timerSeekBar.setProgress(600);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            timerSeekBar.setMin(10);
+        }
+        timerSeekBar.setProgress(10);
         updateTimer(timerSeekBar.getProgress());
 
         if(counterIsActive){
@@ -178,9 +169,6 @@ public class AwarenessActivity extends AppCompatActivity {
                 startTimer();
             }
 
-
-
-
         }
 
     }
@@ -189,6 +177,7 @@ public class AwarenessActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_awareness);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         timerSeekBar = findViewById(R.id.tr_seekbar);
         timerTextView = findViewById(R.id.tr_edittext);
         goButton = findViewById(R.id.startflight_button);
@@ -232,5 +221,21 @@ public class AwarenessActivity extends AppCompatActivity {
         });
 
 
+
     }
+
+
+    private void startAlarm(long time) {
+        alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, AlertReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.MILLISECOND, (int)time-1000);
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+        }
+    }
+
 }

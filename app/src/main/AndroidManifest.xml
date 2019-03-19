@@ -3,6 +3,7 @@
     package="com.juliachihata.co_pilot">
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,11 +12,11 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MissionActivity"></activity>
         <activity android:name=".DifficultyActivity" />
-        <activity android:name=".AltcorrectionActivity" />
-        <activity android:name=".LogbookActivity" />
-        <activity android:name=".DictionaryActivity" />
-        <activity android:name=".AwarenessActivity" />
-        <activity android:name=".CalculationsActivity" />
+        <activity android:name=".AltcorrectionActivity" android:parentActivityName=".CalculationsActivity"/>
+        <activity android:name=".LogbookActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".DictionaryActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".AwarenessActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".CalculationsActivity" android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".AlertReceiver" />
     </application>
+
+
 
 </manifest>
