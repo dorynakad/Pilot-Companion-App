@@ -11,12 +11,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MissionActivity"></activity>
+<<<<<<< HEAD
         <activity android:name=".DifficultyActivity" />
         <activity android:name=".AltcorrectionActivity" android:parentActivityName=".CalculationsActivity"/>
         <activity android:name=".LogbookActivity" android:parentActivityName=".MainActivity"/>
         <activity android:name=".DictionaryActivity" android:parentActivityName=".MainActivity"/>
         <activity android:name=".AwarenessActivity" android:parentActivityName=".MainActivity"/>
         <activity android:name=".CalculationsActivity" android:parentActivityName=".MainActivity"/>
+=======
+        <activity android:name=".DifficultyActivity"
+            android:parentActivityName=".AwarenessActivity"
+            />
+        <activity android:name=".AltcorrectionActivity" />
+        <activity android:name=".LogbookActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".DictionaryActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".AwarenessActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".CalculationsActivity"
+            android:parentActivityName=".MainActivity"/>
+>>>>>>> Creating_back_button
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -10,6 +10,12 @@ public class DictionaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dictionary);
 
+<<<<<<< HEAD
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+=======
+        getSupportActionBar().setTitle("Back");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+>>>>>>> Creating_back_button
     }
 }

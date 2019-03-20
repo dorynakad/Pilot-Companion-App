@@ -32,6 +32,7 @@ public class MissionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mission);
 
+<<<<<<< HEAD
         sequenceTextView = findViewById(R.id.sqnc_edittext);
         infoTextView = findViewById(R.id.info_edittext);
         secondsTextView = findViewById(R.id.seconds_edittext);
@@ -70,6 +71,11 @@ public class MissionActivity extends AppCompatActivity {
 
 
 
+=======
+
+        getSupportActionBar().setTitle("Back");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+>>>>>>> Creating_back_button
     }
 
 
