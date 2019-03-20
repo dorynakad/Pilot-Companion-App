@@ -14,10 +14,6 @@ public class CalculationsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calculations);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //back button
-        getSupportActionBar().setTitle("Back");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         Button altcbutton = findViewById(R.id.altcorrection_button);
 
 

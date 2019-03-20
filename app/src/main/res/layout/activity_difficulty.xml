@@ -11,14 +11,14 @@
         android:id="@+id/eft_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginLeft="106dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginRight="107dp"
         android:layout_marginBottom="10dp"
         android:text="Estimated Flight Time"
-        android:textColor="#5D6578"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/eft_text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,8 +29,8 @@
     <SeekBar
         android:id="@+id/eft_bar"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="384dp"
-        android:layout_height="50dp"
+        android:layout_width="375dp"
+        android:layout_height="65dp"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="5dp"
@@ -67,16 +67,15 @@
         android:layout_height="29dp"
         android:layout_marginStart="122dp"
         android:layout_marginLeft="122dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="23dp"
         android:layout_marginEnd="123dp"
         android:layout_marginRight="123dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="4dp"
         android:text="Awarness Mission"
-        android:textColor="#5D6578"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/mission_group"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eft_bar" />
 
@@ -99,8 +98,8 @@
 
         <RadioButton
             android:id="@+id/gesture_button"
-            android:layout_width="24dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
@@ -108,12 +107,12 @@
             android:button="@drawable/barrow"
             android:padding="10dp"
             android:shape="ring"
-            android:textAlignment="center" />
+            android:text="    Gesture" />
 
         <RadioButton
             android:id="@+id/ari_button"
-            android:layout_width="34dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
@@ -121,8 +120,7 @@
             android:button="@drawable/bmath"
             android:padding="10dp"
             android:shape="ring"
-
-            />
+            android:text="    Arithmetic" />
 
     </RadioGroup>
 
@@ -137,7 +135,7 @@
         android:layout_marginRight="126dp"
         android:layout_marginBottom="6dp"
         android:text="Mission Difficulty"
-        android:textColor="#5D6578"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/difficulty_text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -164,8 +162,8 @@
 
     <TextView
         android:id="@+id/difficulty_text"
-        android:layout_width="120dp"
-        android:layout_height="41dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="165dp"
         android:layout_marginLeft="165dp"
         android:layout_marginTop="6dp"
@@ -173,9 +171,8 @@
         android:layout_marginRight="166dp"
         android:layout_marginBottom="3dp"
         android:text="MEDIUM"
-        android:textAlignment="center"
         android:textColor="@android:color/white"
-        android:textSize="30sp"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/difficulty_bar"
         app:layout_constraintEnd_toEndOf="parent"

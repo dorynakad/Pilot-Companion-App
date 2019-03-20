@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Get the ref of textview in the code
-        mytv = (TextView)findViewById(R.id.copilot_title);
+      /*  mytv = (TextView)findViewById(R.id.copilot_title);
         myfont = Typeface.createFromAsset(this.getAssets(),"fonts/forced_square.ttf");
-        mytv.setTypeface(myfont);
+        mytv.setTypeface(myfont); */
 
         //setting buttons for main activity
         Button but1=(Button) findViewById(R.id.calculations_button);
