@@ -12,6 +12,7 @@ public class CalculationsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculations);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Button altcbutton = findViewById(R.id.altcorrection_button);
 
