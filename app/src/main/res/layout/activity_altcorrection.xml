@@ -9,7 +9,7 @@
     android:background="@drawable/bg">
 
     <TextView
-        android:id="@+id/correctedalt_textview"
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="184dp"
@@ -19,7 +19,7 @@
         android:layout_marginRight="184dp"
         android:text="9350"
         android:textColor="@android:color/white"
-        android:textSize="100sp"
+        android:textSize="125sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="142dp"
         android:layout_marginLeft="142dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="143dp"
         android:layout_marginRight="143dp"
         android:text="Corrected Altitude"
@@ -40,10 +40,10 @@
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adj_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/unalt_edittext"
+        android:id="@+id/editText4"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginStart="80dp"
@@ -72,10 +72,10 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alt_edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
     <EditText
-        android:id="@+id/alt_edittext"
+        android:id="@+id/editText3"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginStart="80dp"
@@ -104,10 +104,10 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temptext" />
+        app:layout_constraintTop_toBottomOf="@+id/Temp" />
 
     <EditText
-        android:id="@+id/temptext"
+        android:id="@+id/Temp"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginStart="80dp"
@@ -144,17 +144,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="142dp"
         android:layout_marginLeft="142dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="143dp"
         android:layout_marginRight="143dp"
         android:text="Adjustment Altitude"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/unalt_edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
     <TextView
-        android:id="@+id/adj_textview"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="184dp"
@@ -171,7 +171,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
-        android:id="@+id/calculate_button"
+        android:id="@+id/button"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
@@ -182,6 +182,6 @@
         android:text="Calculate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/correctedalt_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
 </android.support.constraint.ConstraintLayout>
