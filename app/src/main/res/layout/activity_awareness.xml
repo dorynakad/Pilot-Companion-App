@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".AwarenessActivity"
     android:background="@drawable/bg"
-    tools:context=".AwarenessActivity">
+    >
 
     <TextView
         android:id="@+id/tr_edittext"
@@ -33,33 +34,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="154dp"
         android:layout_marginLeft="154dp"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="154dp"
         android:layout_marginRight="154dp"
         android:layout_marginBottom="1dp"
         android:text="Time Remaining"
-        android:textColor="#5D6578"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/tr_edittext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/settings_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Settings"
-        android:textColor="#5D6578"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tr_textview"
-        app:layout_constraintTop_toTopOf="@+id/settings_button" />
 
     <Button
         android:id="@+id/startflight_button"
@@ -71,6 +56,7 @@
         android:layout_marginRight="131dp"
         android:layout_marginBottom="54dp"
         android:background="@android:color/holo_green_dark"
+        android:onClick="buttonClicked"
         android:text="Start Flight"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
@@ -93,23 +79,5 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tr_edittext" />
-
-    <ImageButton
-        android:id="@+id/settings_button"
-
-        android:layout_width="60dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="8dp"
-
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="52dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.985"
-        app:layout_constraintStart_toEndOf="@+id/tr_textview"
-        app:srcCompat="@drawable/settings3" />
-
 
 </android.support.constraint.ConstraintLayout>
