@@ -32,9 +32,6 @@ public class MissionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mission);
 
-
-        getSupportActionBar().setTitle("Back");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         sequenceTextView = findViewById(R.id.sqnc_edittext);
         infoTextView = findViewById(R.id.info_edittext);
         secondsTextView = findViewById(R.id.seconds_edittext);
@@ -68,8 +65,13 @@ public class MissionActivity extends AppCompatActivity {
         timerThread run2 = new timerThread(repeat,seconds);
         Thread at = new Thread(run1);
         Thread tt = new Thread(run2);
-        at.start();
-        tt.start();
+            at.start();
+            tt.start();
+
+
+
+
+
     }
 
 
@@ -87,25 +89,26 @@ public class MissionActivity extends AppCompatActivity {
 
         @Override
         public void run() {
-            for(h = 0; h < repeat; h++){
-            for(i = 0; i < seconds/1000; i++) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        time = (int) seconds / 1000 - i-1;
-                        secondsTextView.setText(time + "");
+            for(h =0; h < repeat; h++) {
+                for (i = 0; i < seconds / 1000; i++) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            time = (int) seconds / 1000 - i - 1;
+                            secondsTextView.setText(time + "");
 
+                        }
+                    });
+
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
-                });
-
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
             }
 
-            }
+
 
         }
     }
@@ -115,7 +118,7 @@ public class MissionActivity extends AppCompatActivity {
 
         int repeat;
         long seconds;
-        int i;
+        int j;
         arrowThread(int repeat,long seconds){
             this.repeat = repeat;
             this.seconds = seconds;
@@ -123,21 +126,19 @@ public class MissionActivity extends AppCompatActivity {
 
         @Override
         public void run() {
+            for(j = 0; j < repeat; j++) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        roundsTextView.setText((i+1)+"/"+(repeat));
-                        random = rand.nextInt(4)+1;
-                        if(random == 1){
+                        roundsTextView.setText((j + 1) + "/" + (repeat));
+                        random = rand.nextInt(4) + 1;
+                        if (random == 1) {
                             sequenceTextView.setText("←");
-                        }
-                        else if(random == 2){
+                        } else if (random == 2) {
                             sequenceTextView.setText("→");
-                        }
-                        else if(random == 3){
+                        } else if (random == 3) {
                             sequenceTextView.setText("↑");
-                        }
-                        else if(random == 4){
+                        } else if (random == 4) {
                             sequenceTextView.setText("↓");
                         }
 
@@ -152,10 +153,11 @@ public class MissionActivity extends AppCompatActivity {
                 });
 
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(seconds);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+            }
 
         }
 
