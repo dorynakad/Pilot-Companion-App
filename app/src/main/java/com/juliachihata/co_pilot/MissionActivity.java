@@ -32,6 +32,9 @@ public class MissionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mission);
 
+
+        getSupportActionBar().setTitle("Back");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         sequenceTextView = findViewById(R.id.sqnc_edittext);
         infoTextView = findViewById(R.id.info_edittext);
         secondsTextView = findViewById(R.id.seconds_edittext);
