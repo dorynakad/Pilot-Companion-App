@@ -1,8 +1,5 @@
 package com.juliachihata.co_pilot;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     //setting text font for textview in main activity xml
@@ -25,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Get the ref of textview in the code
-        mytv = (TextView)findViewById(R.id.copilot_title);
+      /*  mytv = (TextView)findViewById(R.id.copilot_title);
         myfont = Typeface.createFromAsset(this.getAssets(),"fonts/forced_square.ttf");
-        mytv.setTypeface(myfont);
+        mytv.setTypeface(myfont); */
 
         //setting buttons for main activity
         Button but1=(Button) findViewById(R.id.calculations_button);
@@ -57,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         but3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent int3= new Intent(MainActivity.this, MissionActivity.class);
+                Intent int3= new Intent(MainActivity.this, DictionaryActivity.class);
                 startActivity(int3);
             }
         });
