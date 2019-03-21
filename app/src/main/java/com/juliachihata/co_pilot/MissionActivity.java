@@ -70,9 +70,6 @@ public class MissionActivity extends AppCompatActivity {
         Thread tt = new Thread(run2);
         at.start();
         tt.start();
-
-
-
     }
 
 

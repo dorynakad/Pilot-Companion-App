@@ -28,6 +28,10 @@ import java.util.Calendar;
 
 public class AwarenessActivity extends AppCompatActivity {
 
+    //font
+    TextView normal_font;
+    Typeface myfont2;
+
     TextView timerTextView;
     SeekBar timerSeekBar;
     Boolean counterIsActive = false;
