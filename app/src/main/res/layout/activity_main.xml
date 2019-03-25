@@ -7,7 +7,7 @@
     android:background="@drawable/bg"
     tools:context=".MainActivity">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -15,7 +15,7 @@
             android:id="@+id/copilot_title"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:text="Co-Pilot"
             android:textAlignment="center"
             android:textColor="#FFF"
@@ -28,7 +28,7 @@
             android:layout_height="100dp"
             android:layout_below="@id/copilot_title"
             android:layout_marginLeft="80dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/cal_icon" />
 
         <TextView
@@ -69,7 +69,7 @@
             android:layout_height="100dp"
             android:layout_below="@id/copilot_title"
             android:layout_alignRight="@id/copilot_title"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="80dp"
             android:background="@drawable/awareness_icon" />
 
@@ -107,6 +107,16 @@
             android:text="LogBook"
             android:textAlignment="center"
             android:textColor="#FFF" />
+
+        <Button
+            android:id="@+id/blue_button"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginBottom="20dp"
+            android:background="#2A384A"
+            android:text="Bluetooth"
+            android:textColor="@android:color/white" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

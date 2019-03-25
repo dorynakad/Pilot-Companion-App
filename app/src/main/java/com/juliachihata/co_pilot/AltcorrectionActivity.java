@@ -56,7 +56,6 @@ public class AltcorrectionActivity extends AppCompatActivity {
         });
 
 
-
     }
 
     //rounding airport elevation to the 100's
@@ -88,7 +87,6 @@ public class AltcorrectionActivity extends AppCompatActivity {
     int coldCal(int t , int h) {
         int chart;
         int newh = 0;
-
 
         if (t == 0) {
 
@@ -289,7 +287,6 @@ public class AltcorrectionActivity extends AppCompatActivity {
             }
 
         }
-
 
         //for temp -40
 

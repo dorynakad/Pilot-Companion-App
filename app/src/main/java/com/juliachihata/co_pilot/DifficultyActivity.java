@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +19,9 @@ import android.widget.Toast;
 import com.juliachihata.co_pilot.AwarenessActivity;
 
 public class DifficultyActivity extends AppCompatActivity {
+
+    TextView normal_font;
+    Typeface myfont3;
 
     TextView efttext;
     SeekBar eftbar;
@@ -83,10 +89,33 @@ public class DifficultyActivity extends AppCompatActivity {
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_difficulty);
+
+        //font
+        normal_font = (TextView)findViewById(R.id.eft_textview);
+        myfont3 = Typeface.createFromAsset(this.getAssets(),"fonts/GeosansLight.ttf");
+        normal_font.setTypeface(myfont3);
+
+        normal_font = (TextView)findViewById(R.id.eft_text);
+        myfont3 = Typeface.createFromAsset(this.getAssets(),"fonts/GeosansLight.ttf");
+        normal_font.setTypeface(myfont3);
+
+        normal_font = (TextView)findViewById(R.id.md_textview);
+        myfont3 = Typeface.createFromAsset(this.getAssets(),"fonts/GeosansLight.ttf");
+        normal_font.setTypeface(myfont3);
+
+        normal_font = (TextView)findViewById(R.id.textView11);
+        myfont3 = Typeface.createFromAsset(this.getAssets(),"fonts/GeosansLight.ttf");
+        normal_font.setTypeface(myfont3);
+
+
+        //back button
+        getSupportActionBar().setTitle("Back");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         efttext = findViewById(R.id.eft_text);
         eftbar = findViewById(R.id.eft_bar);

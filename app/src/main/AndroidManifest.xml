@@ -2,21 +2,35 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.juliachihata.co_pilot">
 
-    <application
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
+    <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MissionActivity"></activity>
+        <activity android:name=".BluetoothSettingActivity"></activity>
+        <activity android:name=".BluetoothActivity" />
+        <activity android:name=".MissionActivity" />
         <activity android:name=".DifficultyActivity" />
-        <activity android:name=".AltcorrectionActivity" android:parentActivityName=".CalculationsActivity"/>
-        <activity android:name=".LogbookActivity" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".DictionaryActivity" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".AwarenessActivity" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".CalculationsActivity" android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".AltcorrectionActivity"
+            android:parentActivityName=".CalculationsActivity" />
+        <activity
+            android:name=".LogbookActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".DictionaryActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AwarenessActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CalculationsActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +41,5 @@
 
         <receiver android:name=".AlertReceiver" />
     </application>
-
-
 
 </manifest>

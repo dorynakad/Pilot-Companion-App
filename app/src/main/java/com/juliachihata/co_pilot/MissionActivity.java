@@ -46,6 +46,8 @@ public class MissionActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        initiateThread run;
+
         if(difficulty == 0){
             seconds = 11000;
             repeat = 3;
@@ -70,9 +72,8 @@ public class MissionActivity extends AppCompatActivity {
 
 
 
-
-
     }
+
 
 
     class timerThread implements Runnable{
@@ -109,6 +110,15 @@ public class MissionActivity extends AppCompatActivity {
             }
 
 
+
+        }
+    }
+
+
+    class initiateThread implements Runnable{
+
+        @Override
+        public void run() {
 
         }
     }

@@ -25,15 +25,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Get the ref of textview in the code
-      /*  mytv = (TextView)findViewById(R.id.copilot_title);
+        mytv = (TextView)findViewById(R.id.copilot_title);
         myfont = Typeface.createFromAsset(this.getAssets(),"fonts/forced_square.ttf");
-        mytv.setTypeface(myfont); */
+        mytv.setTypeface(myfont);
 
         //setting buttons for main activity
         Button but1=(Button) findViewById(R.id.calculations_button);
         Button but2=(Button) findViewById(R.id.awareness_button);
         Button but3=(Button) findViewById(R.id.dictionary_button);
         Button but4=(Button) findViewById(R.id.logbook_button);
+        Button but5=(Button) findViewById(R.id.blue_button);
 
         but1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,8 +66,18 @@ public class MainActivity extends AppCompatActivity {
         but4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent int4= new Intent(MainActivity.this, LogbookActivity.class);
+                Intent int4= new Intent(MainActivity.this, DictionaryActivity.class);
                 startActivity(int4);
+            }
+
+
+        });
+
+        but5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent int5= new Intent(MainActivity.this, BluetoothSettingActivity.class);
+                startActivity(int5);
             }
 
 
