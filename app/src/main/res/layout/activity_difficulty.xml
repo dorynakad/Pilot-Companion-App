@@ -21,13 +21,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <ImageView
         android:id="@+id/bar2"
-        android:layout_width="479dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="330dp"
-        android:layout_marginBottom="255dp"
+        android:layout_width="482dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="344dp"
+        android:layout_marginBottom="237dp"
         android:src="@drawable/bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -134,7 +133,7 @@
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="93dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="192dp"
@@ -309,6 +308,25 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
+        android:id="@+id/savedifficulty_button2"
+        android:layout_width="335dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginRight="131dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/buttonshape_red"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/savedifficulty_button"
         android:layout_width="335dp"
         android:layout_height="52dp"
@@ -326,6 +344,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"

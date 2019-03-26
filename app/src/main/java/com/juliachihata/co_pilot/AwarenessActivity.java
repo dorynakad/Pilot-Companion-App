@@ -2,21 +2,14 @@ package com.juliachihata.co_pilot;
 
 
 import android.app.AlarmManager;
-import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Build;
 import android.os.CountDownTimer;
-import android.os.SystemClock;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -31,10 +24,10 @@ public class AwarenessActivity extends AppCompatActivity {
     TextView timerTextView;
     SeekBar timerSeekBar;
     Boolean counterIsActive = false;
-    Button goButton;
+    Button savedifficulty_button;
     ImageButton settingsButton;
-    int red = android.R.color.holo_red_dark;
-    int green = android.R.color.holo_green_dark;
+    //int red = android.R.color.holo_red_dark;
+    //int green = android.R.color.holo_green_dark;
     CountDownTimer countDownTimer;
     long endTime;
     long timeleftms;
@@ -46,8 +39,8 @@ public class AwarenessActivity extends AppCompatActivity {
         timerTextView.setText("00:10:00");
         timerSeekBar.setProgress(600);
         timerSeekBar.setEnabled(true);
-        goButton.setText("Start Flight");
-        goButton.setBackgroundResource(green);
+        savedifficulty_button.setText("Start Flight");
+        //savedifficulty_button.setBackgroundResource(green);
         settingsButton.setClickable(true);
         countDownTimer.cancel();
         counterIsActive = false;
@@ -84,8 +77,8 @@ public class AwarenessActivity extends AppCompatActivity {
         counterIsActive = true;
         settingsButton.setClickable(false);
         timerSeekBar.setEnabled(false);
-        goButton.setBackgroundResource(red);
-        goButton.setText("Stop Flight");
+        //savedifficulty_button.setBackgroundResource(red);
+        savedifficulty_button.setText("Stop Flight");
     }
 
     public void updateTimer(int secondsLeft) {
@@ -185,7 +178,7 @@ public class AwarenessActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         timerSeekBar = findViewById(R.id.tr_seekbar);
         timerTextView = findViewById(R.id.tr_edittext);
-        goButton = findViewById(R.id.startflight_button);
+        savedifficulty_button = findViewById(R.id.startflight_button);
         settingsButton = findViewById(R.id.settings_button);
 
         timerSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -211,7 +204,7 @@ public class AwarenessActivity extends AppCompatActivity {
             }
         });
 
-        goButton.setOnClickListener(new View.OnClickListener() {
+        savedifficulty_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (counterIsActive == true) {
