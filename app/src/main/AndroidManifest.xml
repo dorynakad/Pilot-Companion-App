@@ -15,7 +15,10 @@
         <activity android:name=".BluetoothSettingActivity"></activity>
         <activity android:name=".BluetoothActivity" />
         <activity android:name=".MissionActivity" />
-        <activity android:name=".DifficultyActivity" />
+        <activity
+            android:name=".DifficultyActivity"
+            android:parentActivityName=".AwarenessActivity"
+            />
         <activity
             android:name=".AltcorrectionActivity"
             android:parentActivityName=".CalculationsActivity" />

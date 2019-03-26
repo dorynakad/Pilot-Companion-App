@@ -115,7 +115,7 @@ public class DifficultyActivity extends AppCompatActivity {
 
 
         //back button
-        getSupportActionBar().setTitle("Back");
+        getSupportActionBar().setTitle("Awareness");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         efttext = findViewById(R.id.eft_text);
