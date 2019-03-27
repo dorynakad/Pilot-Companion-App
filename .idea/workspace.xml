@@ -13,39 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67bc6104-e028-46bb-93e4-e5e98fed3ac1" name="Default Changelist" comment="User friendly Settings Layout">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/ActivitySplash.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/buttonshape_red.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/ic_launcher-web.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-web.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/AwarenessActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/AwarenessActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/awareness_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/awareness_icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/dictionary_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/dictionary_icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/logbook_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/logbook_icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_awareness.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_awareness.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_difficulty.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_difficulty.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,14 +107,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="316" />
-          <entry key="txt" value="56" />
+          <entry key="txt" value="156" />
           <entry key="xml" value="1026" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="316" />
-          <entry key="PLAIN_TEXT" value="56" />
+          <entry key="PLAIN_TEXT" value="156" />
           <entry key="XML" value="1026" />
         </counts>
       </usages-collector>
@@ -290,8 +258,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-74" />
-    <option name="y" value="23" />
+    <option name="x" value="3" />
+    <option name="y" value="29" />
     <option name="width" value="1440" />
     <option name="height" value="812" />
   </component>
@@ -471,6 +439,14 @@
       <option name="presentableId" value="Default" />
       <updated>1551491425380</updated>
     </task>
+    <task id="LOCAL-00001" summary="Splash with logo (loading screen) +User friendly Settings Layout: Blue buttons for start flight (for uniformity)">
+      <created>1553641147817</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1553641147817</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -483,7 +459,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-74" y="23" width="1440" height="812" extended-state="0" />
+    <frame x="3" y="29" width="1440" height="812" extended-state="0" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" />
       <window_info id="Image Layers" order="1" />
@@ -491,7 +467,7 @@
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Build Variants" order="5" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.4989339" visible="true" weight="0.24892704" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.4989339" visible="true" weight="0.24892704" />
       <window_info id="Captures" order="7" sideWeight="0.5010661" side_tool="true" weight="0.24892704" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Logcat" order="0" sideWeight="0.71482605" weight="0.083606556" />
@@ -507,7 +483,7 @@
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Gradle" order="1" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info active="true" anchor="right" id="Preview" order="3" visible="true" weight="0.23247497" />
+      <window_info anchor="right" id="Preview" order="3" visible="true" weight="0.23247497" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" weight="0.3290469" />
     </layout>
@@ -543,7 +519,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="User friendly Settings Layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="User friendly Settings Layout" />
+    <MESSAGE value="Splash with logo (loading screen) +User friendly Settings Layout: Blue buttons for start flight (for uniformity)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Splash with logo (loading screen) +User friendly Settings Layout: Blue buttons for start flight (for uniformity)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/AltcorrectionActivity.java">
