@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CoPilot</string>
+    <string name="dictionary_activity">Dictionary Activity</string>
 </resources>
