@@ -11,11 +11,14 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class LogbookActivity extends AppCompatActivity {
 
     ListView lv;
     EditText timeTxt;
+    EditText timeTxt2;
     Button  addBtn,updateBtn,clearBtn,deleteBtn;
     ArrayList<String> flightTimes = new ArrayList<String>();
     ArrayAdapter<String> adapter;
@@ -30,6 +33,7 @@ public class LogbookActivity extends AppCompatActivity {
 
         lv=findViewById(R.id.listView);
         timeTxt =  findViewById(R.id.timeTxt);
+      //  timeTxt2 = findViewById(R.id.timeTxt2);
         addBtn  =  findViewById(R.id.addBtn);
         updateBtn   =   findViewById(R.id.updateBtn);
         clearBtn    =   findViewById(R.id.cleanBtn);
@@ -46,6 +50,7 @@ public class LogbookActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v, int pos, long id) {
 
                 timeTxt.setText(flightTimes.get(pos));
+
 
             }
         });
@@ -77,15 +82,17 @@ public class LogbookActivity extends AppCompatActivity {
         });
 
     }
-
+    Date currentTime = Calendar.getInstance().getTime();
     //Add
 
     private void add(){
-        String flightTime=timeTxt.getText().toString();
+
+       String flightTime=timeTxt.getText().toString() ;//+ timeTxt2.getText().toString();
+
 
         if(!flightTime.isEmpty() && flightTime.length()>0){
             //Add
-            adapter.add(flightTime);
+            adapter.add(currentTime+" "+flightTime+" Hours");
             //Refresh
             adapter.notifyDataSetChanged();
 

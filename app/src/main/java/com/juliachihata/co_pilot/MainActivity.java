@@ -68,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
         but4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent int4= new Intent(MainActivity.this, DictionaryActivity.class);
+                Intent int4= new Intent(MainActivity.this, LogbookActivity.class);
+                //Intent int4= new Intent(MainActivity.this, DictionaryActivity.class); It was like this and I had to remove it in order to test logbook.
                 startActivity(int4);
             }
 
