@@ -13,8 +13,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67bc6104-e028-46bb-93e4-e5e98fed3ac1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_logbook.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_logbook.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/LogbookActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/LogbookActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -130,15 +131,15 @@
     <session id="1732667993">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2262" />
-          <entry key="txt" value="286" />
+          <entry key="java" value="2456" />
+          <entry key="txt" value="327" />
           <entry key="xml" value="122" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2262" />
-          <entry key="PLAIN_TEXT" value="286" />
+          <entry key="JAVA" value="2456" />
+          <entry key="PLAIN_TEXT" value="327" />
           <entry key="XML" value="122" />
         </counts>
       </usages-collector>
@@ -169,11 +170,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_logbook.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="162" column="41" lean-forward="true" selection-start-line="162" selection-start-column="41" selection-end-line="162" selection-end-column="41" />
+            <state relative-caret-position="531">
+              <caret line="166" column="49" selection-start-line="166" selection-start-column="49" selection-end-line="166" selection-end-column="49" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
@@ -195,11 +196,19 @@
           <provider editor-type-id="android-designer2" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/LogbookActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="94" column="58" selection-start-line="94" selection-start-column="58" selection-end-line="94" selection-end-column="58" />
+            <state relative-caret-position="425">
+              <caret line="128" column="5" lean-forward="true" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
+              <folding>
+                <element signature="e#2392#3421#0" expanded="true" />
+                <element signature="e#2817#3058#0" expanded="true" />
+                <element signature="e#3057#3058#0" expanded="true" />
+                <element signature="e#3110#3368#0" expanded="true" />
+                <element signature="e#3367#3368#0" expanded="true" />
+                <element signature="e#3420#3421#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -231,6 +240,7 @@
       <find>red</find>
       <find>set</find>
       <find>timeTxt</find>
+      <find>add</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -276,8 +286,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_awareness.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_difficulty.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/LogbookActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_logbook.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/LogbookActivity.java" />
       </list>
     </option>
   </component>
@@ -479,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553893655693</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added decimal functionality for logbook, WIP for the design">
+      <created>1553893905761</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1553893905761</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -501,7 +518,7 @@
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Build Variants" order="5" sideWeight="0.5006605" side_tool="true" weight="0.22867803" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49141347" visible="true" weight="0.13432837" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.49141347" visible="true" weight="0.13432837" />
       <window_info id="Captures" order="7" sideWeight="0.5006605" side_tool="true" weight="0.21695095" />
       <window_info x="892" y="411" width="135" height="218" id="Palette " order="8" sideWeight="0.4927345" weight="0.20575693" />
       <window_info anchor="bottom" id="Logcat" order="0" sideWeight="0.71482605" weight="0.083606556" />
@@ -518,7 +535,7 @@
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Gradle" order="1" weight="0.32942432" />
       <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info active="true" anchor="right" id="Preview" order="3" visible="true" weight="0.5191898" />
+      <window_info anchor="right" id="Preview" order="3" weight="0.5191898" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" weight="0.3290469" />
     </layout>
@@ -558,7 +575,8 @@
     <MESSAGE value="User friendly Settings Layout + Red button removed" />
     <MESSAGE value="logBookActivity+xml done, WIP for the design" />
     <MESSAGE value="Added current time print on logbook, WIP for the design" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added current time print on logbook, WIP for the design" />
+    <MESSAGE value="Added decimal functionality for logbook, WIP for the design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added decimal functionality for logbook, WIP for the design" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/settingsgears.png">
@@ -808,13 +826,6 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/LogbookActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="94" column="58" selection-start-line="94" selection-start-column="58" selection-end-line="94" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="542">
@@ -824,11 +835,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_logbook.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="162" column="41" lean-forward="true" selection-start-line="162" selection-start-column="41" selection-end-line="162" selection-end-column="41" />
+        <state relative-caret-position="531">
+          <caret line="166" column="49" selection-start-line="166" selection-start-column="49" selection-end-line="166" selection-end-column="49" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/juliachihata/co_pilot/LogbookActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="128" column="5" lean-forward="true" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
+          <folding>
+            <element signature="e#2392#3421#0" expanded="true" />
+            <element signature="e#2817#3058#0" expanded="true" />
+            <element signature="e#3057#3058#0" expanded="true" />
+            <element signature="e#3110#3368#0" expanded="true" />
+            <element signature="e#3367#3368#0" expanded="true" />
+            <element signature="e#3420#3421#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

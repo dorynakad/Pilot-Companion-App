@@ -1,5 +1,7 @@
 package com.juliachihata.co_pilot;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -77,8 +79,27 @@ public class LogbookActivity extends AppCompatActivity {
         clearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clear();
+                AlertDialog.Builder builder = new AlertDialog.Builder(LogbookActivity.this);
+                builder.setCancelable(true);
+                builder.setTitle("ALERT");
+                builder.setMessage("By pressing OK you will CLEAR all your logbook activity, this is a permanent action");
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        clear();
+                    }
+                });
+                builder.show();
             }
+
+
         });
 
     }
@@ -89,10 +110,11 @@ public class LogbookActivity extends AppCompatActivity {
 
        String flightTime=timeTxt.getText().toString() ;//+ timeTxt2.getText().toString();
 
+       // int timeInt = Integer.parseInt(timeTxt);
 
         if(!flightTime.isEmpty() && flightTime.length()>0){
             //Add
-            adapter.add(currentTime+" "+flightTime+" Hours");
+            adapter.add(currentTime+"       "+flightTime+" Hours");
             //Refresh
             adapter.notifyDataSetChanged();
 
