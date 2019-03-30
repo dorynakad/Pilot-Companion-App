@@ -1,9 +1,11 @@
 package com.juliachihata.co_pilot;
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,6 +17,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class LogbookActivity extends AppCompatActivity {
 
@@ -24,12 +29,19 @@ public class LogbookActivity extends AppCompatActivity {
     Button  addBtn,updateBtn,clearBtn,deleteBtn;
     ArrayList<String> flightTimes = new ArrayList<String>();
     ArrayAdapter<String> adapter;
+    SharedPreferences sharedPreferences;
 
+//public static final String PREFS_NAME = "MyPrefsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logbook);
+     //   SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
+     //   flightTimes = settings.getString("flightTimes",flightTimes);
+
+
+        sharedPreferences = getSharedPreferences("mySharedPreferences", MODE_PRIVATE);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -61,6 +73,8 @@ public class LogbookActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 add();
+
+
             }
         });
         updateBtn.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +117,8 @@ public class LogbookActivity extends AppCompatActivity {
         });
 
     }
+
+
     Date currentTime = Calendar.getInstance().getTime();
     //Add
 
@@ -110,7 +126,7 @@ public class LogbookActivity extends AppCompatActivity {
 
        String flightTime=timeTxt.getText().toString() ;//+ timeTxt2.getText().toString();
 
-       // int timeInt = Integer.parseInt(timeTxt);
+      //  int timeInt = timeTxt.getString();
 
         if(!flightTime.isEmpty() && flightTime.length()>0){
             //Add
@@ -120,11 +136,11 @@ public class LogbookActivity extends AppCompatActivity {
 
             timeTxt.setText("");
 
-            Toast.makeText(getApplicationContext(),"Added" +timeTxt, Toast.LENGTH_SHORT).show();
+           Toast.makeText(getApplicationContext(),"Added" +timeTxt, Toast.LENGTH_SHORT).show();
 
         }
         else {
-            Toast.makeText(getApplicationContext(),"!! Nothing to add" +timeTxt, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Nothing to add" +timeTxt, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -148,7 +164,7 @@ public class LogbookActivity extends AppCompatActivity {
             adapter.notifyDataSetChanged();
             Toast.makeText(getApplicationContext(),"Updated" +timeTxt, Toast.LENGTH_SHORT).show();}
             else {
-            Toast.makeText(getApplicationContext(), "!! Nothing to update" , Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), " Nothing to update" , Toast.LENGTH_SHORT).show();
         }
 
 
@@ -169,7 +185,7 @@ public class LogbookActivity extends AppCompatActivity {
             timeTxt.setText("");
             Toast.makeText(getApplicationContext(), "Delete" , Toast.LENGTH_SHORT).show();}
             else{
-            Toast.makeText(getApplicationContext(), "!! Nothing to delete" , Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Nothing to delete" , Toast.LENGTH_SHORT).show();
 
         }
 
@@ -181,4 +197,5 @@ public class LogbookActivity extends AppCompatActivity {
     adapter.clear();
 
     }
+
 }
