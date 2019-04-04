@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         but3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent int3= new Intent(MainActivity.this, GestureActivity.class);
+                Intent int3= new Intent(MainActivity.this, DictionaryActivity.class);
                 startActivity(int3);
             }
         });
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         but4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent int4= new Intent(MainActivity.this, DictionaryActivity.class);
+                Intent int4= new Intent(MainActivity.this, LogbookActivity.class);
                 startActivity(int4);
             }
 

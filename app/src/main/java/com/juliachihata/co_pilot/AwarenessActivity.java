@@ -29,6 +29,7 @@ public class AwarenessActivity extends AppCompatActivity {
     int red = android.R.color.holo_red_dark;
     int green = android.R.color.holo_green_dark;
     int mission;
+    int startmission;
     CountDownTimer countDownTimer;
     long endTime;
     long timeleftms,total;
@@ -64,6 +65,11 @@ public class AwarenessActivity extends AppCompatActivity {
         contButton.setVisibility(View.INVISIBLE);
         endTime = System.currentTimeMillis() + timeleftms;
         Toast.makeText(getApplicationContext(),timeleftms+"",Toast.LENGTH_SHORT).show();
+        SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("startmission",0);
+        editor.commit();
+
         if(alarmManager == null){
             startAlarm(timeleftms);
         }
@@ -88,6 +94,10 @@ public class AwarenessActivity extends AppCompatActivity {
                     Intent intent= new Intent(AwarenessActivity.this, GestureActivity.class);
                     startActivity(intent);
                 }
+                SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putInt("startmission",1);
+                editor.commit();
 
             }
         }.start();
@@ -155,6 +165,7 @@ public class AwarenessActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
         boolean settings = preferences.getBoolean("settingsaved",false);
 
         timeleftms = preferences.getLong("timeleft", 600*1000);
@@ -183,6 +194,21 @@ public class AwarenessActivity extends AppCompatActivity {
             timeleftms = endTime - System.currentTimeMillis();
 
             if(timeleftms  <= 0){
+                startmission = preferences.getInt("startmission",0);
+                System.out.println(startmission+"");
+                if(startmission == 0) {
+                    if (mission == 1) {
+                        Intent intent = new Intent(AwarenessActivity.this, GestureActivity.class);
+                        startActivity(intent);
+                    } else if (mission == 2) {
+                        Intent intent = new Intent(AwarenessActivity.this, GestureActivity.class);
+                        startActivity(intent);
+                    }
+                    editor.putInt("startmission",1);
+                    System.out.println(startmission+"");
+                    editor.commit();
+                }
+                System.out.println(startmission+"");
                 progress = timerSeekBar.getProgress();
                 updateTimer(progress);
                 timerSeekBar.setProgress(progress);
@@ -193,6 +219,7 @@ public class AwarenessActivity extends AppCompatActivity {
                 timerSeekBar.setEnabled(false);
                 goButton.setBackgroundResource(red);
                 goButton.setText("Stop Flight");
+
             }
             else {
                 startTimer();

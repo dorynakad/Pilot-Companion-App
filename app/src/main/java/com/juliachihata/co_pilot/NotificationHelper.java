@@ -3,8 +3,10 @@ package com.juliachihata.co_pilot;
 import android.annotation.TargetApi;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
@@ -12,6 +14,7 @@ import android.support.v4.app.NotificationCompat;
 public class NotificationHelper extends ContextWrapper {
     public static final String channelID = "channelID";
     public static final String channelName = "Channel Name";
+
 
     private NotificationManager mManager;
 
@@ -38,9 +41,14 @@ public class NotificationHelper extends ContextWrapper {
     }
 
     public NotificationCompat.Builder getChannelNotification() {
+        Intent notificationIntent = new Intent(getApplicationContext(), AwarenessActivity.class);
+
+        PendingIntent intent = PendingIntent.getActivity(getApplicationContext(), 0,
+                notificationIntent, 0);
         return new NotificationCompat.Builder(getApplicationContext(), channelID)
                 .setContentTitle("Start Awarness Mission")
                 .setContentText("Timer is up! Go to Awarness Activity")
-                .setSmallIcon(R.drawable.notifplane);
+                .setSmallIcon(R.drawable.notifplane)
+                .setContentIntent(intent);
     }
 }

@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -27,6 +28,7 @@ import java.util.Timer;
 import java.util.UUID;
 
 import static android.os.SystemClock.sleep;
+import static com.juliachihata.co_pilot.R.raw.*;
 
 public class GestureActivity extends AppCompatActivity {
 
@@ -65,13 +67,20 @@ public class GestureActivity extends AppCompatActivity {
     arrowThread run1;
     Thread at;
 
+    MediaPlayer fivetoone;
+    MediaPlayer corrects;
+    MediaPlayer incorrects;
+    MediaPlayer goodfinish;
+    MediaPlayer wrongfinish;
+    MediaPlayer ring;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         address = "00:18:E5:03:71:9E";
         setContentView(R.layout.activity_gesture);
-
         missionLayout = findViewById(R.id.missionLayout);
         resultLayout = findViewById(R.id.resultLayout);
         sequenceTextView = findViewById(R.id.sqnc_edittext);
@@ -83,7 +92,6 @@ public class GestureActivity extends AppCompatActivity {
         startCount = findViewById(R.id.startcount);
         startText = findViewById(R.id.starttext);
         percText = findViewById(R.id.perc);
-        test = findViewById(R.id.TEST);
         SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         difficulty = preferences.getInt("difficulty", 1);
 
@@ -100,35 +108,7 @@ public class GestureActivity extends AppCompatActivity {
         connectBT.execute();
         check = connectBT.ConnectSuccess;
 
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int g = 0;
 
-                for (int i = 0; i < 35; i++) {
-
-                    sendSignal("1");
-                    sleep(100);
-                    if (btSocket != null) {
-                        try {
-                            read = btSocket.getInputStream().read();
-
-                        } catch (IOException e) {
-                            msg("Error");
-                        }
-                    }
-                    if (read == 1) {
-                        Toast.makeText(getApplicationContext(), "GOT UP", Toast.LENGTH_LONG).show();
-                        g = 1;
-                        break;
-                    }
-                }
-                if (g == 0) {
-                    Toast.makeText(getApplicationContext(), "RETRY", Toast.LENGTH_LONG).show();
-                }
-
-            }
-        });
 
     }
 
@@ -221,13 +201,14 @@ public class GestureActivity extends AppCompatActivity {
     }
 
     public void startCount() {
+        fivetoone = MediaPlayer.create(this, R.raw.fivetoone);
+        fivetoone.start();
         new CountDownTimer(5000, 1000) {
 
             @Override
             public void onTick(long l) {
                 startCount.setText(String.valueOf(1 + (l / 1000)) + "");
             }
-
             @Override
             public void onFinish() {
                 startCount.setVisibility(View.INVISIBLE);
@@ -244,6 +225,11 @@ public class GestureActivity extends AppCompatActivity {
         life = 3;
         score = 0;
         running = false;
+        corrects = MediaPlayer.create(this, R.raw.correct);
+        incorrects = MediaPlayer.create(this, R.raw.incorrect);
+        goodfinish = MediaPlayer.create(this, R.raw.goodfinish);
+        wrongfinish = MediaPlayer.create(this, R.raw.wrongfinish);
+        ring = MediaPlayer.create(this, R.raw.ring);
 
         if (difficulty == 0) {
             repeat = 8;
@@ -283,12 +269,9 @@ public class GestureActivity extends AppCompatActivity {
 
     }
 
-
-
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        onStop();
+
     }
 
     class arrowThread implements Runnable {
@@ -356,6 +339,7 @@ public class GestureActivity extends AppCompatActivity {
                                             percenta = correct/tries;
                                             percText.setText(String.format( "%.2f", percenta*100 ));
                                             check = 1;
+                                            corrects.start();
                                             if (good == true) {
                                                 Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_LONG)
                                                         .show();
@@ -367,6 +351,7 @@ public class GestureActivity extends AppCompatActivity {
                                 @Override
                                 public void onFinish() {
                                         if (good == false) {
+                                            incorrects.start();
                                             percenta = correct/tries;
                                             percText.setText(String.format( "%.2f", percenta*100 ));
                                             Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_LONG).show();
@@ -397,6 +382,7 @@ public class GestureActivity extends AppCompatActivity {
                                             }
                                         }
                                         if (read == 2) {
+                                            corrects.start();
                                             System.out.println("GOT IT");
                                             good = true;
                                             correct++;
@@ -415,6 +401,7 @@ public class GestureActivity extends AppCompatActivity {
                                 @Override
                                 public void onFinish() {
                                     if (good == false) {
+                                        incorrects.start();
                                         percenta = correct/tries;
                                         percText.setText(String.format( "%.2f", percenta*100 ));
                                         Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_LONG).show();
@@ -445,6 +432,7 @@ public class GestureActivity extends AppCompatActivity {
                                             }
                                         }
                                         if (read == 3) {
+                                            corrects.start();
                                             System.out.println("GOT IT");
                                             good = true;
                                             correct++;
@@ -463,6 +451,7 @@ public class GestureActivity extends AppCompatActivity {
                                 @Override
                                 public void onFinish() {
                                     if (good == false) {
+                                        incorrects.start();
                                         percenta = correct/tries;
                                         percText.setText(String.format( "%.2f", percenta*100 ));
                                         Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_LONG).show();
@@ -493,6 +482,7 @@ public class GestureActivity extends AppCompatActivity {
                                             }
                                         }
                                         if (read == 4) {
+                                            corrects.start();
                                             System.out.println("GOT IT");
                                             good = true;
                                             correct++;
@@ -511,6 +501,7 @@ public class GestureActivity extends AppCompatActivity {
                                 @Override
                                 public void onFinish() {
                                     if (good == false) {
+                                        incorrects.start();
                                         percenta = correct/tries;
                                         percText.setText(String.format( "%.2f", percenta*100 ));
                                         Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_LONG).show();
@@ -522,9 +513,7 @@ public class GestureActivity extends AppCompatActivity {
                         }
 
                         try {
-                            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-                            r.play();
+                            ring.start();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -551,11 +540,20 @@ public class GestureActivity extends AppCompatActivity {
                     System.out.println( String.format( "%.2f", fin ) );
 
                     if(fin > 60.0){
+                        goodfinish.start();
                         resultText.setText("Passed\nYou Are "+ String.format( "%.2f", fin ) + "% Aware" );
                         messageText.setText("Good Job! Keep Flying Safely");
                         resultText.setTextColor(getResources().getColor(green));
                     }
+                    else if( fin <= 0){
+                        wrongfinish.start();
+                        resultText.setText("EMERGENCY\nYou Are "+ String.format( "%.2f", fin ) + "% Aware" );
+                        messageText.setText("Immediately Alerting The ATC");
+                        resultText.setTextColor(getResources().getColor(red));
+
+                    }
                     else {
+                        wrongfinish.start();
                         resultText.setText("Failed\nYou Are "+ String.format( "%.2f", fin ) + "% Aware" );
                         messageText.setText("Be Careful! Alerting The ATC");
                         resultText.setTextColor(getResources().getColor(red));
@@ -567,7 +565,7 @@ public class GestureActivity extends AppCompatActivity {
                 }
             });
 
-            sleep(5000);
+            sleep(6000);
 
             onStop();
 
