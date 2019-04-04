@@ -23,7 +23,7 @@ import java.util.Set;
 
 public class LogbookActivity extends AppCompatActivity {
 
-    HashSet<String> emptySet;
+    HashSet<String> emptySet;  //Creating an empty set so that the set would be "empty" and not "invalid" in case it is
     ListView lv;
     EditText timeTxt;
     EditText timeTxt2;
@@ -132,12 +132,12 @@ public class LogbookActivity extends AppCompatActivity {
     }
 
 
-    public void saveEntries() {
+    public void saveEntries() { //So that we can save the logbook on the phone (Hopefully on the clouds later
         HashSet<String> set = new HashSet<String>(flightTimes);
         sharedPreferences.edit().putStringSet("entries", set).apply();
     }
 
-    public void loadEntries() {
+    public void loadEntries() { //Loading the logbook even if reinstalled and also loading an empty set in case it is empty
         Set<String> set = sharedPreferences.getStringSet("entries", null);
         if(set==null) {
             set = emptySet;
