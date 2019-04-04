@@ -23,11 +23,12 @@ import java.util.Set;
 
 public class LogbookActivity extends AppCompatActivity {
 
+    HashSet<String> emptySet;
     ListView lv;
     EditText timeTxt;
     EditText timeTxt2;
     Button  addBtn,updateBtn,clearBtn,deleteBtn;
-    ArrayList<String> flightTimes = new ArrayList<String>();
+    ArrayList<String> flightTimes;
     ArrayAdapter<String> adapter;
     SharedPreferences sharedPreferences;
 
@@ -40,8 +41,8 @@ public class LogbookActivity extends AppCompatActivity {
      //   SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
      //   flightTimes = settings.getString("flightTimes",flightTimes);
 
-
-        sharedPreferences = getSharedPreferences("mySharedPreferences", MODE_PRIVATE);
+        flightTimes = new ArrayList<String>();
+        sharedPreferences = getSharedPreferences("mySharedPrefs", MODE_PRIVATE);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -73,6 +74,7 @@ public class LogbookActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 add();
+                saveEntries();
 
 
             }
@@ -81,6 +83,7 @@ public class LogbookActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 update();
+                saveEntries();
             }
         });
 
@@ -88,6 +91,7 @@ public class LogbookActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 delete();
+                saveEntries();
             }
         });
         clearBtn.setOnClickListener(new View.OnClickListener() {
@@ -116,8 +120,40 @@ public class LogbookActivity extends AppCompatActivity {
 
         });
 
+
+        emptySet = new HashSet<String>();
+        emptySet.add("");
+        loadEntries();
+
     }
 
+    public String[] splitString(String s) {
+        return s.split(" ");
+    }
+
+
+    public void saveEntries() {
+        HashSet<String> set = new HashSet<String>(flightTimes);
+        sharedPreferences.edit().putStringSet("entries", set).apply();
+    }
+
+    public void loadEntries() {
+        Set<String> set = sharedPreferences.getStringSet("entries", null);
+        if(set==null) {
+            set = emptySet;
+        } else {
+            populateList(set);
+        }
+
+        adapter.notifyDataSetChanged();
+
+    }
+
+    public void populateList(Set<String> set) {
+        for(String s : set) {
+            flightTimes.add(s);
+        }
+    }
 
     Date currentTime = Calendar.getInstance().getTime();
     //Add
@@ -130,7 +166,7 @@ public class LogbookActivity extends AppCompatActivity {
 
         if(!flightTime.isEmpty() && flightTime.length()>0){
             //Add
-            adapter.add(currentTime+"       "+flightTime+" Hours");
+            adapter.add(currentTime+"    "+flightTime+" Hours");
             //Refresh
             adapter.notifyDataSetChanged();
 
@@ -166,8 +202,9 @@ public class LogbookActivity extends AppCompatActivity {
             else {
             Toast.makeText(getApplicationContext(), " Nothing to update" , Toast.LENGTH_SHORT).show();
         }
+        saveEntries();
 
-
+        
 
         }
 
@@ -189,13 +226,14 @@ public class LogbookActivity extends AppCompatActivity {
 
         }
 
+        
 
     }
 
     //clear
     private void clear(){
     adapter.clear();
-
+    saveEntries();
     }
 
 }
