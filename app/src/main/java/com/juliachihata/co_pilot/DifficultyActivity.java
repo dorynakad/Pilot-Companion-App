@@ -25,17 +25,17 @@ public class DifficultyActivity extends AppCompatActivity {
 
     TextView efttext;
     SeekBar eftbar;
-    RadioGroup missiongroup;
-    RadioButton gbutton;
-    RadioButton abutton;
+    RadioButton ari,ges;
+    RadioButton missionbutton;
     TextView diftext;
     SeekBar difbar;
     Button savebutton;
+    String checked;
+    int mission;
     int hours;
     int minutes;
     int total;
     int difint;
-    View view;
     AwarenessActivity awarenessActivity = new AwarenessActivity();
 
 
@@ -75,16 +75,40 @@ public class DifficultyActivity extends AppCompatActivity {
         diftext.setText(difficulty);
     }
 
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.gesture_button:
+                if (checked) {
+                    mission = 1;
+                    break;
+                }
+            case R.id.ari_button:
+                if (checked) {
+                    mission = 2;
+                    break;
+                }
+        }
+
+        saveinfo();
+
+    }
 
     public void saveinfo(){
         SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putInt("eft",total);
         editor.putInt("difficulty",difint);
+        editor.putInt("mission",mission);
         editor.putBoolean("settingsaved",true);
         savebutton.setClickable(false);
         editor.commit();
     }
+
+
 
 
 
@@ -113,9 +137,6 @@ public class DifficultyActivity extends AppCompatActivity {
         normal_font.setTypeface(myfont3);
 
 
-        //back button
-        getSupportActionBar().setTitle("Back");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         efttext = findViewById(R.id.eft_text);
         eftbar = findViewById(R.id.eft_bar);
@@ -164,9 +185,12 @@ public class DifficultyActivity extends AppCompatActivity {
         });
 
 
+
         savebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 finish();
             }
 

@@ -1,9 +1,9 @@
 package com.juliachihata.co_pilot;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,18 +11,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.Calendar;
-
 public class MainActivity extends AppCompatActivity {
     //setting text font for textview in main activity xml
     TextView mytv;
     Typeface myfont;
+    BluetoothAdapter myBluetooth = null;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        myBluetooth = BluetoothAdapter.getDefaultAdapter();
+        SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("stop",0);
+        editor.commit();
 
         //Get the ref of textview in the code
         mytv = (TextView)findViewById(R.id.copilot_title);
@@ -35,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
         Button but3=(Button) findViewById(R.id.dictionary_button);
         Button but4=(Button) findViewById(R.id.logbook_button);
         Button but5=(Button) findViewById(R.id.blue_button);
+
+        if(!myBluetooth.isEnabled()) {
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, 1);
+        }
+
 
         but1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         but3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent int3= new Intent(MainActivity.this, MissionActivity.class);
+                Intent int3= new Intent(MainActivity.this, GestureActivity.class);
                 startActivity(int3);
             }
         });

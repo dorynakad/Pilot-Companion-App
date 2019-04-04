@@ -2,7 +2,9 @@ package com.juliachihata.co_pilot;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -74,7 +76,12 @@ public class BluetoothSettingActivity extends AppCompatActivity {
             String info = ((TextView) view).getText().toString();
             String address = info.substring(info.length()-17);
 
+            SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+
             Intent i = new Intent(BluetoothSettingActivity.this, BluetoothActivity.class);
+            editor.putString("address",address);
+            editor.commit();
             i.putExtra(EXTRA_ADDRESS, address);
             startActivity(i);
         }

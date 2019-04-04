@@ -106,6 +106,7 @@
             android:layout_weight="1"
             android:background="@drawable/mission_selector"
             android:button="@drawable/barrow"
+            android:onClick="onRadioButtonClicked"
             android:padding="10dp"
             android:shape="ring"
             android:textAlignment="center" />
@@ -119,10 +120,10 @@
             android:layout_weight="1"
             android:background="@drawable/mission_selector"
             android:button="@drawable/bmath"
+            android:onClick="onRadioButtonClicked"
             android:padding="10dp"
-            android:shape="ring"
 
-            />
+            android:shape="ring" />
 
     </RadioGroup>
 

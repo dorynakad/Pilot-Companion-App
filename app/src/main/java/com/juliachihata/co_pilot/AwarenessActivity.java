@@ -2,21 +2,14 @@ package com.juliachihata.co_pilot;
 
 
 import android.app.AlarmManager;
-import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Build;
 import android.os.CountDownTimer;
-import android.os.SystemClock;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -31,25 +24,35 @@ public class AwarenessActivity extends AppCompatActivity {
     TextView timerTextView;
     SeekBar timerSeekBar;
     Boolean counterIsActive = false;
-    Button goButton;
+    Button goButton,contButton;
     ImageButton settingsButton;
     int red = android.R.color.holo_red_dark;
     int green = android.R.color.holo_green_dark;
+    int mission;
     CountDownTimer countDownTimer;
     long endTime;
-    long timeleftms;
-    int eft, difficulty;
+    long timeleftms,total;
+    int eft, difficulty,progress;
     AlarmManager alarmManager;
+    PendingIntent pendingIntent;
 
 
     public void resetTimer() {
-        timerTextView.setText("00:10:00");
-        timerSeekBar.setProgress(600);
+        progress = timerSeekBar.getProgress();
+        updateTimer(progress);
+        timerSeekBar.setProgress(progress);
         timerSeekBar.setEnabled(true);
         goButton.setText("Start Flight");
         goButton.setBackgroundResource(green);
         settingsButton.setClickable(true);
-        countDownTimer.cancel();
+        contButton.setVisibility(View.INVISIBLE);
+
+        if(alarmManager != null){
+            alarmManager.cancel(pendingIntent);
+        }
+        if(countDownTimer != null){
+            countDownTimer.cancel();
+        }
         counterIsActive = false;
         SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -58,15 +61,12 @@ public class AwarenessActivity extends AppCompatActivity {
 
 
     private void startTimer() {
+        contButton.setVisibility(View.INVISIBLE);
         endTime = System.currentTimeMillis() + timeleftms;
         Toast.makeText(getApplicationContext(),timeleftms+"",Toast.LENGTH_SHORT).show();
         if(alarmManager == null){
             startAlarm(timeleftms);
         }
-        else{
-
-        }
-
         countDownTimer = new CountDownTimer(timeleftms, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -76,8 +76,19 @@ public class AwarenessActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                counterIsActive = false;
-                resetTimer();
+                progress = timerSeekBar.getProgress();
+                updateTimer(progress);
+                timerSeekBar.setProgress(progress);
+                contButton.setVisibility(View.VISIBLE);
+                if(mission == 1){
+                    Intent intent= new Intent(AwarenessActivity.this, GestureActivity.class);
+                    startActivity(intent);
+                }
+                else if(mission == 2){
+                    Intent intent= new Intent(AwarenessActivity.this, GestureActivity.class);
+                    startActivity(intent);
+                }
+
             }
         }.start();
 
@@ -107,18 +118,16 @@ public class AwarenessActivity extends AppCompatActivity {
         if (hours <= 9) {
             fourthString = "0" + fourthString;
         }
-        if(seconds == 0 && minutes == 0 && hours == 0){
-            secondString = "00";
-            thirdString = "00";
-            fourthString = "00";
-        }
-        timerTextView.setText(fourthString+ ":" + thirdString + ":" + secondString);
+
+
+            timerTextView.setText(fourthString + ":" + thirdString + ":" + secondString);
+
 
         if(secondsLeft <= 10 && secondsLeft > 0){
             timerTextView.setText(secondString);
         }
-        else if(secondsLeft == 0){
-
+        else if(secondsLeft <= 0){
+            timerTextView.setText("0");
         }
 
     }
@@ -130,10 +139,12 @@ public class AwarenessActivity extends AppCompatActivity {
         super.onStop();
         SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("progress",progress);
         editor.putBoolean("Active",counterIsActive);
         editor.putLong("endtime", endTime);
         editor.putLong("timeleft", timeleftms);
         editor.commit();
+
 
         if(countDownTimer != null){
             countDownTimer.cancel();
@@ -145,30 +156,43 @@ public class AwarenessActivity extends AppCompatActivity {
         super.onStart();
         SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         boolean settings = preferences.getBoolean("settingsaved",false);
+
         timeleftms = preferences.getLong("timeleft", 600*1000);
         counterIsActive = preferences.getBoolean("Active",false);
+        progress = preferences.getInt("progress", 10);
         if( counterIsActive == false && settings == false){
             Intent intent= new Intent(AwarenessActivity.this, DifficultyActivity.class);
             startActivity(intent);
         }
-
-        eft = preferences.getInt("eft",3600);
+        eft = preferences.getInt("eft",60000);
+        total = System.currentTimeMillis() + eft;
         difficulty = preferences.getInt("difficulty",1);
+        mission = preferences.getInt("mission", 1);
         timerSeekBar.setMax(eft/2);
+
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             timerSeekBar.setMin(10);
         }
-        timerSeekBar.setProgress(10);
+
+        timerSeekBar.setProgress(progress);
         updateTimer(timerSeekBar.getProgress());
 
         if(counterIsActive){
             endTime = preferences.getLong("endtime", 0);
             timeleftms = endTime - System.currentTimeMillis();
 
-            if(timeleftms < 0){
-                timeleftms = 0;
+            if(timeleftms  <= 0){
+                progress = timerSeekBar.getProgress();
+                updateTimer(progress);
+                timerSeekBar.setProgress(progress);
                 counterIsActive = false;
-                resetTimer();
+                contButton.setVisibility(View.VISIBLE);
+                counterIsActive = true;
+                settingsButton.setClickable(false);
+                timerSeekBar.setEnabled(false);
+                goButton.setBackgroundResource(red);
+                goButton.setText("Stop Flight");
             }
             else {
                 startTimer();
@@ -186,7 +210,10 @@ public class AwarenessActivity extends AppCompatActivity {
         timerSeekBar = findViewById(R.id.tr_seekbar);
         timerTextView = findViewById(R.id.tr_edittext);
         goButton = findViewById(R.id.startflight_button);
+        contButton = findViewById(R.id.continue_button);
         settingsButton = findViewById(R.id.settings_button);
+        goButton.setVisibility(View.VISIBLE);
+        contButton.setVisibility(View.INVISIBLE);
 
         timerSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -225,15 +252,20 @@ public class AwarenessActivity extends AppCompatActivity {
             }
         });
 
-
+        contButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    endTime = System.currentTimeMillis()/1000 + timerSeekBar.getProgress();
+                    startTimer();
+            }
+        });
 
     }
-
 
     private void startAlarm(long time) {
         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlertReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
         Calendar c = Calendar.getInstance();
         c.add(Calendar.MILLISECOND, (int)time-1000);
 
@@ -241,6 +273,7 @@ public class AwarenessActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
         }
+
     }
 
 }

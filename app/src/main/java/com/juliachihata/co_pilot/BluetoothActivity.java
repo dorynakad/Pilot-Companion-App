@@ -96,7 +96,7 @@ public class BluetoothActivity extends AppCompatActivity {
                             msg("Error");
                         }
                     }
-                    if(read == 1){
+                    if(read == 2){
                         Toast.makeText(getApplicationContext(), "GOT DOWN", Toast.LENGTH_LONG).show();
                         break;
                     }
@@ -120,7 +120,7 @@ public class BluetoothActivity extends AppCompatActivity {
                             msg("Error");
                         }
                     }
-                    if(read == 1){
+                    if(read == 3){
                         Toast.makeText(getApplicationContext(), "GOT LEFT", Toast.LENGTH_LONG).show();
                         break;
                     }
@@ -144,7 +144,7 @@ public class BluetoothActivity extends AppCompatActivity {
                             msg("Error");
                         }
                     }
-                    if(read == 1){
+                    if(read == 4){
                         Toast.makeText(getApplicationContext(), "GOT RIGHT", Toast.LENGTH_LONG).show();
                         break;
                     }
@@ -199,7 +199,7 @@ public class BluetoothActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
     }
 
-    private class ConnectBT extends AsyncTask<Void, Void, Void> {
+    public class ConnectBT extends AsyncTask<Void, Void, Void> {
         private boolean ConnectSuccess = true;
 
         @Override
