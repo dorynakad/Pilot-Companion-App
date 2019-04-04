@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,10 +31,14 @@ public class LogbookActivity extends AppCompatActivity {
     Button  addBtn,updateBtn,clearBtn,deleteBtn;
     ArrayList<String> flightTimes;
     ArrayAdapter<String> adapter;
-    SharedPreferences sharedPreferences;
+    SharedPreferences sharedPreferences;static final String PREFS_NAME = "MyPrefsFile";
+//    int white = android.R.color.white;
 
-//public static final String PREFS_NAME = "MyPrefsFile";
+    //the two lines below should let the user input numbers from 1 to 12 , the code is in InputFilterMinMax
+//EditText et = (EditText) findViewById(R.id.timeTxt);
+//et.setFilters(new InputFilter[]{ new InputFilterMinMax("1", "12")});
 
+//public
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +63,6 @@ public class LogbookActivity extends AppCompatActivity {
 
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_single_choice , flightTimes);
         lv.setAdapter(adapter);
-
         //Set selected item
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -187,7 +191,7 @@ public class LogbookActivity extends AppCompatActivity {
 
         //GET POS OF SELECTED ITEM
         int pos=lv.getCheckedItemPosition();
-        if(!flightTime.isEmpty() && flightTime.length()>0){
+        if(!flightTime.isEmpty() && flightTime.length()>0  ){
 
             //Remove item
             adapter.remove(flightTimes.get(pos));
