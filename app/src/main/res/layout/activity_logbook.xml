@@ -40,10 +40,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:background="@android:color/white"
         android:layout_marginBottom="8dp"
         android:choiceMode="singleChoice"
         android:headerDividersEnabled="false"
-        android:textColor="#FFFF"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
@@ -96,6 +97,7 @@
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
+
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"

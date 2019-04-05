@@ -35,7 +35,9 @@ public class LogbookActivity extends AppCompatActivity {
 //    int white = android.R.color.white;
 
     //the two lines below should let the user input numbers from 1 to 12 , the code is in InputFilterMinMax
-//EditText et = (EditText) findViewById(R.id.timeTxt);
+
+//    EditText et = (EditText) findViewById(R.id.timeTxt);
+
 //et.setFilters(new InputFilter[]{ new InputFilterMinMax("1", "12")});
 
 //public
@@ -170,17 +172,21 @@ public class LogbookActivity extends AppCompatActivity {
 
         if(!flightTime.isEmpty() && flightTime.length()>0){
             //Add
+            if (Integer.parseInt(flightTime)< 0 || Integer.parseInt(flightTime)>5){
+                Toast.makeText(getApplicationContext(),"Flight time Invalid", Toast.LENGTH_LONG).show();
+                return;
+            }
             adapter.add(currentTime+"    "+flightTime+" Hours");
             //Refresh
             adapter.notifyDataSetChanged();
 
             timeTxt.setText("");
 
-           Toast.makeText(getApplicationContext(),"Added" +timeTxt, Toast.LENGTH_SHORT).show();
+           Toast.makeText(getApplicationContext(),"Added "+flightTime +" hours" , Toast.LENGTH_SHORT).show();
 
         }
         else {
-            Toast.makeText(getApplicationContext(),"Nothing to add" +timeTxt, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Nothing to add", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -202,7 +208,7 @@ public class LogbookActivity extends AppCompatActivity {
 
             //refresh
             adapter.notifyDataSetChanged();
-            Toast.makeText(getApplicationContext(),"Updated" +timeTxt, Toast.LENGTH_SHORT).show();}
+            Toast.makeText(getApplicationContext(),"Updated" + timeTxt, Toast.LENGTH_SHORT).show();}
             else {
             Toast.makeText(getApplicationContext(), " Nothing to update" , Toast.LENGTH_SHORT).show();
         }
