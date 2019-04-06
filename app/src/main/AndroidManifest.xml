@@ -16,7 +16,6 @@
         <activity android:name=".BluetoothSettingActivity"></activity>
         <activity android:name=".BluetoothActivity" />
         <activity android:name=".GestureActivity" />
-        <activity android:name=".DifficultyActivity" />
         <activity android:name=".MissionActivity" />
         <activity android:name=".ActivitySplash">
             <intent-filter>

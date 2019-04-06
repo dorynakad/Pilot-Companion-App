@@ -317,7 +317,6 @@
         android:layout_marginEnd="131dp"
         android:layout_marginRight="131dp"
         android:layout_marginBottom="28dp"
-        android:background="@drawable/buttonshape_red"
         android:text="Save"
         android:textAllCaps="false"
         android:textColor="#FFF"
