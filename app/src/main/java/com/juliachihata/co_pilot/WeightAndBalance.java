@@ -40,7 +40,7 @@ public class WeightAndBalance extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.WeightAndBalance);
+        setContentView(R.layout.weight_and_balance);
             //link the elements from the layout to the java activity
             PlaneEditText = (EditText) findViewById(R.id.PlaneEditText);
             FuelEditText = (EditText) findViewById(R.id.FuelEditText);
