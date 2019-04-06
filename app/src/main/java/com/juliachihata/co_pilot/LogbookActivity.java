@@ -57,7 +57,7 @@ public class LogbookActivity extends AppCompatActivity {
         timeTxt =  findViewById(R.id.timeTxt);
       //  timeTxt2 = findViewById(R.id.timeTxt2);
         addBtn  =  findViewById(R.id.addBtn);
-//        updateBtn   =   findViewById(R.id.updateBtn);
+        updateBtn   =   findViewById(R.id.updateBtn);
         clearBtn    =   findViewById(R.id.cleanBtn);
         deleteBtn   =   findViewById(R.id.deleteBtn);
 
@@ -85,13 +85,13 @@ public class LogbookActivity extends AppCompatActivity {
 
             }
         });
-//        updateBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                update();
-//                saveEntries();
-//            }
-//        });
+        updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                update();
+                saveEntries();
+            }
+        });
 
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,28 +172,22 @@ public class LogbookActivity extends AppCompatActivity {
 
         if(!flightTime.isEmpty() && flightTime.length()>0){
             //Add
-            if ( Double.parseDouble(flightTime)> 0 && Double.parseDouble(flightTime)<6){
-                adapter.add(currentTime+"    "+flightTime+" Hours");
-                //Refresh
-                adapter.notifyDataSetChanged();
-
-                timeTxt.setText("");
-
-                Toast.makeText(getApplicationContext(),"Added "+flightTime +" hours" , Toast.LENGTH_SHORT).show();
-
+            if (Integer.parseInt(flightTime)< 0 || Integer.parseInt(flightTime)>5){
+                Toast.makeText(getApplicationContext(),"Flight time Invalid", Toast.LENGTH_LONG).show();
+                return;
             }
+            adapter.add(currentTime+"    "+flightTime+" Hours");
+            //Refresh
+            adapter.notifyDataSetChanged();
 
+            timeTxt.setText("");
 
-            else {
+           Toast.makeText(getApplicationContext(),"Added "+flightTime +" hours" , Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(getApplicationContext(),"Nothing to add", Toast.LENGTH_LONG).show();
-            }
         }
-        else{
+        else {
             Toast.makeText(getApplicationContext(),"Nothing to add", Toast.LENGTH_LONG).show();
-
         }
-
     }
 
     //Update
