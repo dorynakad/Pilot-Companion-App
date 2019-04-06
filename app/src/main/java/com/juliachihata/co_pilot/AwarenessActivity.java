@@ -43,8 +43,8 @@ public class AwarenessActivity extends AppCompatActivity {
         updateTimer(progress);
         timerSeekBar.setProgress(progress);
         timerSeekBar.setEnabled(true);
-        goButton.setText("Start Flight");
-        goButton.setBackgroundResource(green);
+        savedifficulty_button.setText("Start Flight");
+        //savedifficulty_button.setBackgroundResource(green);
         settingsButton.setClickable(true);
         contButton.setVisibility(View.INVISIBLE);
 
@@ -105,8 +105,8 @@ public class AwarenessActivity extends AppCompatActivity {
         counterIsActive = true;
         settingsButton.setClickable(false);
         timerSeekBar.setEnabled(false);
-        goButton.setBackgroundResource(red);
-        goButton.setText("Stop Flight");
+        //savedifficulty_button.setBackgroundResource(red);
+        savedifficulty_button.setText("Stop Flight");
     }
 
     public void updateTimer(int secondsLeft) {
@@ -265,7 +265,7 @@ public class AwarenessActivity extends AppCompatActivity {
             }
         });
 
-        goButton.setOnClickListener(new View.OnClickListener() {
+        savedifficulty_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (counterIsActive == true) {
