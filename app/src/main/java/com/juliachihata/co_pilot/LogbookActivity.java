@@ -2,11 +2,9 @@ package com.juliachihata.co_pilot;
 
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.InputFilter;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,7 +17,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class LogbookActivity extends AppCompatActivity {
@@ -28,6 +25,7 @@ public class LogbookActivity extends AppCompatActivity {
     ListView lv;
     EditText timeTxt;
     EditText timeTxt2;
+    EditText DatePTxt;
     Button  addBtn,updateBtn,clearBtn,deleteBtn;
     ArrayList<String> flightTimes;
     ArrayAdapter<String> adapter;
@@ -55,6 +53,7 @@ public class LogbookActivity extends AppCompatActivity {
 
         lv=findViewById(R.id.listView);
         timeTxt =  findViewById(R.id.timeTxt);
+        DatePTxt = findViewById(R.id.datePickerTxt);
       //  timeTxt2 = findViewById(R.id.timeTxt2);
         addBtn  =  findViewById(R.id.addBtn);
         updateBtn   =   findViewById(R.id.updateBtn);
@@ -167,6 +166,7 @@ public class LogbookActivity extends AppCompatActivity {
     private void add(){
 
        String flightTime=timeTxt.getText().toString() ;//+ timeTxt2.getText().toString();
+        String dateLog = DatePTxt.getText().toString() ;
 
       //  int timeInt = timeTxt.getString();
 
@@ -174,9 +174,12 @@ public class LogbookActivity extends AppCompatActivity {
             //Add
             if (Integer.parseInt(flightTime)< 0 || Integer.parseInt(flightTime)>5){
                 Toast.makeText(getApplicationContext(),"Flight time Invalid", Toast.LENGTH_LONG).show();
+
+                if (!dateLog.isEmpty())
+                        adapter.add(currentTime+ "\n" + dateLog + "    " + flightTime+" Hours");
                 return;
             }
-            adapter.add(currentTime+"    "+flightTime+" Hours");
+//            adapter.add(currentTime+"    "+flightTime+" Hours");
             //Refresh
             adapter.notifyDataSetChanged();
 
