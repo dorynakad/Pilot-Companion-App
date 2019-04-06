@@ -1,23 +1,2397 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DictionaryActivity"
-    android:background="@drawable/bg"
 
-    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        <TableLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:background="@drawable/bg"
+            tools:context=".DictionaryActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="1">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Dictionary Activity"
-        android:textAlignment="center"
-        android:textColor="#FFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</android.support.constraint.ConstraintLayout>
+
+            <TableRow>
+                <TextView
+                    android:text="Abbreviations "
+                    android:textSize="25sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:text="Acronyms"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="AAE"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="above aerodrome elevation"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ACAS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="airborne collision avoidance system"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ACC"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="area control centre"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="AD"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="airworthiness directive"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ADF"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="automatic direction finder"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ADIZ"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="air defence identification zone"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="AGL"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="above ground level"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="AME"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="auxiliary power unit"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="APU"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="automatic direction finder"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ASDA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="accelerate stop distance available"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ASI"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="airspeed indicator"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ASL"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="above sea level"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ASR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="airport surveillance radar"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="ATC"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="air traffic control"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="ATF"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="aerodrome traffic frequency"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="ATPL"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="airline transport pilot licence"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ATS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="air traffic services"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="BC"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="back course"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="BFL"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="balanced field length"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="C of A"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="certificate of airworthiness"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="C of R"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="certificate of registration"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="CAME"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="Civil Aviation Medical Examiner"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="CAP"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="Canada Air Pilot"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="CARs"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="Canadian Aviation Regulations"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="CARS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="community aerodrome radio station"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="CAS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="calibrated airspeed"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="CAT"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="clear air turbulence"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="CDI"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="course deviation indicator"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="CFI"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="chief flying instructor"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="CFS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="Canada Flight Supplement"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="CG"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="centre of gravity"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="CP"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="critical point"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="CPL"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="commercial pilot licence"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="CRFI"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="Canadian Runway Friction Index"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="CVFR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="controlled visual flight rules"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="CVR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="cockpit voice recorder"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="CZ"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="control zone"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="DF"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="direction finder"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="DH"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="decision height"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="DMR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="distance measuring equipment"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="DR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="dead reckoning navigation"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="DVFR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="defence visual flight rules"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="EAT"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="expected approach time"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="EFC"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="expected further clearance time"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="EGT"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="exhaust gas temperature"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ELT"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="emergency locator transmitter"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="EPR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="engine pressure ratio"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ETA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="estimated time of arrival"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ETD"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="estimated time of departure"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="EWH"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="eye-to-wheel height"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="FAA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="Federal Aviation Administration"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="FDR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="flight data recorder"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="FIR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="flight information region"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="FL"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="flight level"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="FMS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="flight management system"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="FPD"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="freezing point depressant"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="fpm"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="feet per minute"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="GFA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="graphic area forecast"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="GNSS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="global navigation satellite system"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="GP"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="glide path"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="gph"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="gallon(s) per hour"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="GPS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="global positioning system"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="HAA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="height above aerodrome"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="HAT"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="height above touchdown"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="fpm"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="feet per minute"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="HF"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="high frequency"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="HI chart"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="Enroute High Altitude Chart"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="HPa"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="hectopascal"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="HSI"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="horizontal situation indicator"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="IAF"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="initial approach fix"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="IAS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="indicated airspeed"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="IFR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="instrument flight rules"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ILS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="instrument landing system"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="IMC"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="instrument meteorological condition"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="imp."
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="imperial"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="INS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="inertial navigation system"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="ISA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="International Standard Atmosphere"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="KIAS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="knots indicated air speed"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="kt"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="knot"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="LAHSO"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="land and hold short operations"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="L/D ratio"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="lift/drag ratio"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="LDA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="landing distance available"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="LF/MF"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="low frequency/medium frequency"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="LO chart"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="Enroute Low Altitude Chart"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="M"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="magnetic"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="MAC"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="mean aerodynamic chord"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="MAP"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="missed approach point"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="mb"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="millibar"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="MDA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="minimum descent altitude"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="MEA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="minimum en route altitude"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="MEL"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="minimum equipment list"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="METAR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="aviation routine weather report"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="MF"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="mandatory frequency"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="MP"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="manifold pressure"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="MRA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="minimum reception altitude"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="MSL"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="mean sea level"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="MVFR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="marginal visual flight rules"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="NAT"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="North Atlantic"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="NAVAID"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="navigation aid"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="NDB"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="non-directional beacon"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="NM"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="nautical mile"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="NORDO"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="no radio"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="NOTAM"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="notice to airmen"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="OAT"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="outside air temperature"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="OBS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="omnibearing selector"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="PAPI"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="precision approach path indicator"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="PAR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="precision approach radar"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="PIC"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="pilot-in-command"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="PIREP"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="pilot weather report"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="PNR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="point of no return"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="pph"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="pound(s) per hour"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="PPL"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="private pilot licence"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="psi"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="pounds per square inch"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="PSR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="primary surveillance radar"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="RCC"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="rescue co-ordination centre"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="RCO"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="remote communications outlet"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="RMI"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="radio magnetic indicator"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="RNAV"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="area navigation"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="RPP"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="recreation pilot permit"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="RVR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="runway visual range"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:text="RWY"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="runway"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="SAE"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="Society of Automotive Engineers"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:text="SELGAL"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="selective calling system"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="SGR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="specific ground range"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:text="SID"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="standard instrument departure"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="SM"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="statute mile"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:text="SSR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="secondary surveillance radar"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="STAR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="standard terminal arrival"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:text="STOL"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="short take-off and landing"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="SVFR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="special visual flight rules"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:text="TACAN"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="tactical air navigation aid"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="TAF"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="aerodrome forecast"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="TAS"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="true airspeed"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="TCA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="terminal control area"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="TC AIM"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="Aeronautical Information Manual"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="TCU"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="terminal control unit"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="TDZ"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="touchdown zone"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="T/O"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="takeoff"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="TODA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="take-off distance available"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="TORA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="take-off run available"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="TOT"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="turbine outlet temperature"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="UHF"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="ultrahigh frequency"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="UNICOM"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="universal communications"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="UTC"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="Co-Ordinated Universal Time"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="VDF"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="VHF direction-finding"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="VFR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="visual flight rules"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="VFR OTT"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="VFR over-the-top"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="VHF"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="very high frequency"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="VLF"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="very low frequency"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="VMC"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="visual meteorological conditions"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="VNC"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="VFR Navigation Chart"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="VOR"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="VHF omnidirectional range"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="VORTAC"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="combination of VOR and TACAN"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="VOT"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="VOR receiver test facility"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="VSI"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="vertical speed indicator"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="VTA"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="VFR Terminal Area Chart"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Z"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:text="Co-Ordinated Universal Time"
+                    android:textSize="15sp"
+                    android:textColor="#FFF"
+                    android:layout_gravity="center"
+                    />
+            </TableRow>
+
+
+
+        </TableLayout>
+
+    </ScrollView>
+</LinearLayout>
