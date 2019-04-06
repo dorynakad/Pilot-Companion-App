@@ -75,7 +75,6 @@
 
     <SeekBar
         android:id="@+id/eft_bar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="384dp"
         android:layout_height="50dp"
         android:layout_marginStart="55dp"
@@ -271,7 +270,6 @@
 
     <SeekBar
         android:id="@+id/difficulty_bar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="225dp"
         android:layout_height="30dp"
         android:layout_marginStart="56dp"
