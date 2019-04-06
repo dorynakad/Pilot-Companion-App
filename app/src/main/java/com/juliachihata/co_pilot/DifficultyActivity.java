@@ -37,6 +37,7 @@ public class DifficultyActivity extends AppCompatActivity {
     int total;
     int difint;
     AwarenessActivity awarenessActivity = new AwarenessActivity();
+    View view;
 
 
     public void updateeft(int eft){
@@ -185,12 +186,9 @@ public class DifficultyActivity extends AppCompatActivity {
         });
 
 
-
         savebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 finish();
             }
 

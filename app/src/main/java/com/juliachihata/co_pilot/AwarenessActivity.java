@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -128,7 +129,17 @@ public class AwarenessActivity extends AppCompatActivity {
         if (hours <= 9) {
             fourthString = "0" + fourthString;
         }
+        if(seconds == 0 && minutes == 0 && hours == 0){
+            secondString = "00";
+            thirdString = "00";
+            fourthString = "00";
+        }
+        timerTextView.setText(fourthString+ ":" + thirdString + ":" + secondString);
 
+        if(secondsLeft <= 10 && secondsLeft > 0){
+            timerTextView.setText(secondString);
+        }
+        else if(secondsLeft == 0){
 
             timerTextView.setText(fourthString + ":" + thirdString + ":" + secondString);
 
