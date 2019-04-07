@@ -32,6 +32,11 @@
         <activity
             android:name=".AltcorrectionActivity"
             android:parentActivityName=".CalculationsActivity" />
+
+        <activity android:name="WeightAndBalance"
+            android:parentActivityName=".CalculationsActivity"
+            />
+
         <activity
             android:name=".LogbookActivity"
             android:parentActivityName=".MainActivity" />

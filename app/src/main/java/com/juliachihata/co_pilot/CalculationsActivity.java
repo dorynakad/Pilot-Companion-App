@@ -17,6 +17,8 @@ public class CalculationsActivity extends AppCompatActivity {
         Button altcbutton = findViewById(R.id.altcorrection_button);
 
 
+        Button wbbutton = findViewById(R.id.weightbalancebutton);
+
         altcbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -24,7 +26,14 @@ public class CalculationsActivity extends AppCompatActivity {
                 startActivity(int1);
             }
 
+        });
 
+        wbbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent int2 = new Intent(CalculationsActivity.this, WeightAndBalance.class);
+                startActivity(int2);
+            }
         });
     }
 }

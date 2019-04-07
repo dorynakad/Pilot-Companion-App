@@ -11,17 +11,42 @@
     <Button
         android:id="@+id/altcorrection_button"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_width="335dp"
+        android:layout_height="51dp"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="46dp"
         android:layout_marginEnd="211dp"
         android:layout_marginRight="211dp"
-        android:layout_marginBottom="585dp"
+        android:layout_marginBottom="288dp"
+        android:background="@drawable/buttonshape"
         android:text="Altitude Correction"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+        />
+
+
+    <Button
+        android:id="@+id/weightbalancebutton"
+        android:layout_width="335dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/buttonshape"
+
+        android:text="Weight and Balance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702">
+
+    </Button>
+
+
+
+
+
 </android.support.constraint.ConstraintLayout>
