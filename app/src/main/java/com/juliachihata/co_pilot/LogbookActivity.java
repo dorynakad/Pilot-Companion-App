@@ -192,7 +192,7 @@ public class LogbookActivity extends AppCompatActivity {
         if(!flightTime.isEmpty() && flightTime.length()>0){
             if (dateLog.isEmpty())
                 Toast.makeText(getApplicationContext(),"Please choose a date", Toast.LENGTH_LONG).show();
-            if (Integer.parseInt(flightTime) < 0 || Integer.parseInt(flightTime) > 5){
+            if (Double.parseDouble(flightTime) < 0 || Double.parseDouble(flightTime) > 5){
                 Toast.makeText(getApplicationContext(),"Flight time Invalid", Toast.LENGTH_LONG).show();
             }
             else {
@@ -225,7 +225,7 @@ public class LogbookActivity extends AppCompatActivity {
         //GET POS OF SELECTED ITEM
         int pos=lv.getCheckedItemPosition();
 
-        if (Integer.parseInt(flightTime) < 0 || Integer.parseInt(flightTime) > 5){
+        if (Double.parseDouble(flightTime) < 0 || Double.parseDouble(flightTime) > 5){
             Toast.makeText(getApplicationContext(),"Flight time Invalid", Toast.LENGTH_LONG).show();
         }
         else {
