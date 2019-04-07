@@ -3,18 +3,21 @@ package com.juliachihata.co_pilot;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Objects;
 
 public class AltcorrectionActivity extends AppCompatActivity {
     EditText tempEditText, altEditText, uncoraltEditText;
-    TextView adjaltTextView,correctedaltTextView;
+    TextView adjaltTextView, correctedaltTextView;
     Button calculateButton;
-    int temp, alt,uncoralt,adjalt,correctedalt, height;
+    int temp, alt, uncoralt, adjalt, correctedalt, height;
+    String tempS, altS, unCorAltS;
 
 
     @Override
@@ -31,6 +34,17 @@ public class AltcorrectionActivity extends AppCompatActivity {
         adjaltTextView = findViewById(R.id.adj_textview);
         correctedaltTextView = findViewById(R.id.correctedalt_textview);
         calculateButton = findViewById(R.id.calculate_button);
+
+        int maxLength[]= new int[]{3,4,5};
+
+        //to limit characters
+        InputFilter[] FilterArray = new InputFilter[1];
+        FilterArray[0] = new InputFilter.LengthFilter(maxLength[0]);
+        tempEditText.setFilters(FilterArray);
+        FilterArray[0] = new InputFilter.LengthFilter(maxLength[1]);
+        altEditText.setFilters(FilterArray);
+        FilterArray[0] = new InputFilter.LengthFilter(maxLength[2]);
+        uncoraltEditText.setFilters(FilterArray);
     }
 
     @Override
@@ -40,17 +54,34 @@ public class AltcorrectionActivity extends AppCompatActivity {
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                temp = Integer.parseInt(tempEditText.getText().toString());
-                alt = Integer.parseInt(altEditText.getText().toString());
-                uncoralt = Integer.parseInt(uncoraltEditText.getText().toString());
+                tempS = tempEditText.getText().toString();
+                altS = altEditText.getText().toString();
+                unCorAltS = uncoraltEditText.getText().toString();
 
-                alt = roundAirportElevation(alt);
-                temp = roundTempValue(temp);
-                height = height(uncoralt,alt);
-                adjalt = coldCal(temp,height);
-                correctedalt = uncoralt + adjalt;
-                adjaltTextView.setText(""+adjalt);
-                correctedaltTextView.setText(""+correctedalt);
+                if (!tempS.isEmpty() && !altS.isEmpty() && !unCorAltS.isEmpty()) {
+                    temp = Integer.parseInt(tempS);
+                    alt = Integer.parseInt(altS);
+                    uncoralt = Integer.parseInt(unCorAltS);
+
+                    if (temp < -40 || temp > 10){
+                        Toast.makeText(getApplicationContext(),"Error: -40 ≤ temperature ≤ 10",Toast.LENGTH_SHORT).show();
+                    }
+                    else if (alt < 200 || alt > 5000){
+                        Toast.makeText(getApplicationContext(),"Error: 200 ≤ altitude ≤ 5000",Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        alt = roundAirportElevation(alt);
+                        temp = roundTempValue(temp);
+                        height = height(uncoralt, alt);
+                        adjalt = coldCal(temp, height);
+                        correctedalt = uncoralt + adjalt;
+                        adjaltTextView.setText(""+adjalt);
+                        correctedaltTextView.setText(""+correctedalt);
+                    }
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Please complete the data entries",Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -61,27 +92,17 @@ public class AltcorrectionActivity extends AppCompatActivity {
     //rounding airport elevation to the 100's
     public int roundAirportElevation(int a)
     {
-        int A;
-        A=Math.round(a*100)/100;
-
-        return A;
+        return Math.round(a * 100) / 100;
     }
 
-    public int height(int uncorrectedAltitude,int a){
-        int h;
-        h=uncorrectedAltitude-a;
-
-        return h;
+    public int height(int uncorrectedAltitude, int a){
+        return uncorrectedAltitude - a;
     }
 
     //rounding t to the 10th
     public int roundTempValue(int t)
     {
-        int T;
-
-        T = Math.round(t *10) / 10;
-
-        return T;
+        return Math.round(t * 10) / 10;
     }
 
     int coldCal(int t , int h) {
@@ -395,6 +416,6 @@ public class AltcorrectionActivity extends AppCompatActivity {
         }
 
         return newh;
-        }
-
     }
+
+}

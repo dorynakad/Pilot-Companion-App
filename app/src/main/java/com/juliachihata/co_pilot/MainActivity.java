@@ -47,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
         Button but4=(Button) findViewById(R.id.logbook_button);
         Button but5=(Button) findViewById(R.id.blue_button);
 
-        if(!myBluetooth.isEnabled()) {
-            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBtIntent, 1);
-        }
+//        if(!myBluetooth.isEnabled()) {
+//            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+//            startActivityForResult(enableBtIntent, 1);
+//        }
 
 
         but1.setOnClickListener(new View.OnClickListener() {
