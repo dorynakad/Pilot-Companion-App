@@ -4,21 +4,224 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LogbookActivity"
     android:background="@drawable/bg"
+    tools:context=".LogbookActivity">
 
-    >
+    <!--<EditText-->
+    <!--android:id="@+id/timeTxt2"-->
+    <!--android:layout_width="241dp"-->
+    <!--android:layout_height="57dp"-->
+    <!--android:layout_marginStart="8dp"-->
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:layout_marginEnd="8dp"-->
+    <!--android:layout_marginRight="8dp"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--android:ems="10"-->
+    <!--android:inputType="number"-->
+    <!--android:hint="End Time"-->
+    <!--android:textColorHint="#B2B2B2"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="24sp"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintHorizontal_bias="1.0"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--app:layout_constraintVertical_bias="0.112" />-->
+
+    <RelativeLayout
+        android:id="@+id/date"
+        android:layout_width="180dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:onClick="setDate"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/time_icon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/date_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="32dp"
+            android:src="@drawable/ic_view_day_grey600_24dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/date_icon"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textColor="@color/abc_primary_text_material_dark"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/set_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/ic_launcher_background"
+                android:hint="Tap here..."
+                android:textColor="@color/ic_launcher_background"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/time_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_access_time_grey600_24dp"
+        app:layout_constraintEnd_toStartOf="@+id/timeTxt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/date"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/timeTxt"
+        android:layout_width="50dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:backgroundTint="@color/abc_primary_text_material_dark"
+        android:ems="10"
+        android:hint="  #"
+        android:inputType="numberDecimal"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/time_icon"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/hrs_txt"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="22dp"
+        android:text="hours"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@+id/timeTxt"
+        app:layout_constraintTop_toTopOf="@+id/timeTxt" />
+
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="93dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/cleanBtn"
+        app:layout_constraintTop_toBottomOf="@+id/timeTxt"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <Button
+        android:id="@+id/addBtn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Logbook Activity"
-        android:textAlignment="center"
-        android:textColor="#FFF"
+        android:text="Add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeTxt"
+        app:layout_constraintVertical_bias="0.033" />
 
+    <Button
+        android:id="@+id/updateBtn"
+        android:layout_width="93dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Update"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addBtn"
+        app:layout_constraintTop_toBottomOf="@+id/timeTxt"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <Button
+        android:id="@+id/cleanBtn"
+        android:layout_width="93dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Clear"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/updateBtn"
+        app:layout_constraintTop_toBottomOf="@+id/timeTxt"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/updateBtn">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="30dp"
+            android:alwaysDrawnWithCache="true"
+            android:background="@android:color/transparent"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp"
+            android:headerDividersEnabled="false"
+            android:horizontalSpacing="3dp"
+            android:scrollingCache="true"
+            android:smoothScrollbar="true"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.526"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cleanBtn"
+            app:layout_constraintVertical_bias="0.92" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
 
