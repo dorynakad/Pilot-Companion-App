@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 but1.setVisibility(View.INVISIBLE);
-                but1_1.animate().alpha(1.0f).setDuration(1500).start();
-                but1_2.animate().alpha(1.0f).setDuration(3000).start();
+                but1_1.animate().alpha(1.0f).setDuration(800).start();
+                but1_2.animate().alpha(1.0f).setDuration(1000).start();
             }
         });
 
