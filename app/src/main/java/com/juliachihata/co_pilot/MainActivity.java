@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, 1);
         }
-        
+
         but1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
