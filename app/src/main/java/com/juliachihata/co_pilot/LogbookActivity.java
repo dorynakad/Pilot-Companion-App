@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputFilter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -67,6 +68,11 @@ public class LogbookActivity extends AppCompatActivity {
         clearBtn    =   findViewById(R.id.cleanBtn);
         deleteBtn   =   findViewById(R.id.deleteBtn);
 
+        //to limit characters
+        InputFilter[] FilterArray = new InputFilter[1];
+        FilterArray[0] = new InputFilter.LengthFilter(5);
+        timeTxt.setFilters(FilterArray);
+
         //Adapter
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, flightTimes){
             @Override
@@ -85,7 +91,7 @@ public class LogbookActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v, int pos, long id) {
 
                 // This is to match the content of the input added/ to be updated
-                Pattern p_t = Pattern.compile("\\d(?= Hours)");
+                Pattern p_t = Pattern.compile("^*(\\d|\\d.\\d*)(?= Hours)");
                 Pattern p_d = Pattern.compile("(?<=\\[).*?(?=\\])");
                 Matcher m_t = p_t.matcher(flightTimes.get(pos));
                 Matcher m_d = p_d.matcher(flightTimes.get(pos));
@@ -192,8 +198,8 @@ public class LogbookActivity extends AppCompatActivity {
         if(!flightTime.isEmpty() && flightTime.length()>0){
             if (dateLog.isEmpty())
                 Toast.makeText(getApplicationContext(),"Please choose a date", Toast.LENGTH_LONG).show();
-            if (Double.parseDouble(flightTime) < 0 || Double.parseDouble(flightTime) > 5){
-                Toast.makeText(getApplicationContext(),"Flight time Invalid", Toast.LENGTH_LONG).show();
+            if (Double.parseDouble(flightTime) < 0.25 || Double.parseDouble(flightTime) > 5){
+                Toast.makeText(getApplicationContext(),"Error!\nMin time: 0.25 h\nMax time: 5 h", Toast.LENGTH_LONG).show();
             }
             else {
                 //Add
@@ -234,7 +240,7 @@ public class LogbookActivity extends AppCompatActivity {
             //Remove item
             adapter.remove(flightTimes.get(pos));
 
-            String new_record = save_record.replaceAll("\\d(?= Hours)", flightTime);
+            String new_record = save_record.replaceAll("^*(\\d|\\d.\\d*)(?= Hours)", flightTime);
             new_record = new_record.replaceAll("(?<=\\[).*?(?=\\])", dateLog);
 
             //Insert
@@ -286,8 +292,13 @@ public class LogbookActivity extends AppCompatActivity {
                 date_view.setText(m + " / " + d + ", " + y);
             }
         }, day, month, year);
-        dpd.getDatePicker().setMinDate(System.currentTimeMillis());
+        dpd.getDatePicker().setMaxDate(System.currentTimeMillis());
+        dpd.updateDate(year,month,day);
         dpd.show();
+    }
+
+    public void editableText(View view){
+        timeTxt.setFocusableInTouchMode(true);
     }
 
 }
