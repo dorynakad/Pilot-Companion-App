@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class WeightAndBalance extends AppCompatActivity {
 
@@ -72,15 +73,39 @@ public class WeightAndBalance extends AppCompatActivity {
         calculationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (PlaneEditText.getText().toString().length() == 0)
+                {
+                    Toast.makeText(getApplicationContext(), "Warning: Field is empty", Toast.LENGTH_SHORT).show();
+
+                }
+                else if (FuelEditText.getText().toString().length() == 0)
+                {
+                    Toast.makeText(getApplicationContext(), "Warning: Field is empty", Toast.LENGTH_SHORT).show();
+
+                }
+                else if (PilotPassEditText.getText().toString().length() == 0)
+                {
+                    Toast.makeText(getApplicationContext(), "Warning: Field is empty", Toast.LENGTH_SHORT).show();
+
+                }
+                else if (BaggageAreaEditText.getText().toString().length() == 0)
+                {
+                    Toast.makeText(getApplicationContext(), "Warning: Field is empty", Toast.LENGTH_SHORT).show();
+
+                }
+                else
+                {
                 //converts the string into an integer and assigns it to the variable
                 planeWeight=Double.parseDouble(PlaneEditText.getText().toString());
                 fuelWeight=Double.parseDouble(FuelEditText.getText().toString());
                 pilotPassWeight=Double.parseDouble(PilotPassEditText.getText().toString());
                 bagageAreaWeight=Double.parseDouble(BaggageAreaEditText.getText().toString());
 
+
                 SumMomentTextView.setText("sum of weight is "+sumWeights());
                 SumWeightTextView.setText("sum of moment is "+sumMomentum());
-            }
+            }}
         });
     }
 }

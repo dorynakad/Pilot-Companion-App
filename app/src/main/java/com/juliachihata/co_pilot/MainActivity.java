@@ -54,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
         but1_1.setAlpha(0);
         but1_2.setAlpha(0);
 
-        if(!myBluetooth.isEnabled()) {
-            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBtIntent, 1);
-        }
+//        if(!myBluetooth.isEnabled()) {
+//            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+//            startActivityForResult(enableBtIntent, 1);
+//        }
 
         but1.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -156,7 +156,7 @@ public class DictionaryActivity extends AppCompatActivity {
         names.add("STOL                         short take-off and landing");
         names.add("SVFR                           special visual flight rules");
         names.add("TACAN                      tactical air navigation aid");
-        names.add("TAF                                      aerodrome forecast");
+        names.add("TAF                      terminal aerodrome forecast");
         names.add("TAS                                                 true airspeed");
         names.add("TCA                                   terminal control area");
         names.add("TC AIM        Aeronautical Information Manual");
