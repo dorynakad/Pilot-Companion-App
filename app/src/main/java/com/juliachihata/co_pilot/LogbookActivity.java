@@ -231,26 +231,29 @@ public class LogbookActivity extends AppCompatActivity {
         //GET POS OF SELECTED ITEM
         int pos=lv.getCheckedItemPosition();
 
-        if (Double.parseDouble(flightTime) < 0 || Double.parseDouble(flightTime) > 5){
-            Toast.makeText(getApplicationContext(),"Flight time Invalid", Toast.LENGTH_LONG).show();
+        if(!flightTime.isEmpty() && flightTime.length()>0) {
+            if (dateLog.isEmpty())
+                Toast.makeText(getApplicationContext(), "Please choose a date", Toast.LENGTH_LONG).show();
+            else if (Double.parseDouble(flightTime) < 0 || Double.parseDouble(flightTime) > 5) {
+                Toast.makeText(getApplicationContext(), "Error!\nMin time: 0.25 h\nMax time: 5 h", Toast.LENGTH_LONG).show();
+            } else {
+                String save_record = flightTimes.get(pos);
+
+                //Remove item
+                adapter.remove(flightTimes.get(pos));
+
+                String new_record = save_record.replaceAll("^*(\\d|\\d.\\d*)(?= Hours)", flightTime);
+                new_record = new_record.replaceAll("(?<=\\[).*?(?=\\])", dateLog);
+
+                //Insert
+                adapter.insert(new_record, pos);
+
+                //refresh
+                adapter.notifyDataSetChanged();
+                Toast.makeText(getApplicationContext(), "Successfully Updated!", Toast.LENGTH_SHORT).show();
+            }
         }
-        else {
-            String save_record = flightTimes.get(pos);
-
-            //Remove item
-            adapter.remove(flightTimes.get(pos));
-
-            String new_record = save_record.replaceAll("^*(\\d|\\d.\\d*)(?= Hours)", flightTime);
-            new_record = new_record.replaceAll("(?<=\\[).*?(?=\\])", dateLog);
-
-            //Insert
-            adapter.insert(new_record,pos);
-
-            //refresh
-            adapter.notifyDataSetChanged();
-            Toast.makeText(getApplicationContext(),"Successfully Updated!", Toast.LENGTH_SHORT).show();
-        }
-        if (flightTime.isEmpty()){
+        else{
             Toast.makeText(getApplicationContext(), "Nothing to update" , Toast.LENGTH_SHORT).show();
         }
         saveEntries();

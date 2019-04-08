@@ -295,7 +295,6 @@ public class AwarenessActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_settings, menu);
         if (!timerSeekBar.isEnabled()) {
             MenuItem menuItem = menu.findItem(R.id.action_settings);
-            menuItem.setVisible(false);
             menuItem.setEnabled(false);
         }
         return true;
@@ -303,11 +302,8 @@ public class AwarenessActivity extends AppCompatActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        super.onPrepareOptionsMenu(menu);
-        // If this is a new reminder, hide the "Delete" menu item.
         if (timerSeekBar.isEnabled()) {
             MenuItem menuItem = menu.findItem(R.id.action_settings);
-            menuItem.setVisible(true);
             menuItem.setEnabled(true);
         }
         return true;
