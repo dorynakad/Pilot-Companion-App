@@ -1,6 +1,7 @@
 package com.juliachihata.co_pilot;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -54,6 +56,7 @@ public class LogbookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logbook);
 
+
         flightTimes = new ArrayList<String>();
         sharedPreferences = getSharedPreferences("mySharedPrefs", MODE_PRIVATE);
 
@@ -67,6 +70,8 @@ public class LogbookActivity extends AppCompatActivity {
         updateBtn   =   findViewById(R.id.updateBtn);
         clearBtn    =   findViewById(R.id.cleanBtn);
         deleteBtn   =   findViewById(R.id.deleteBtn);
+
+
 
         //to limit characters
         InputFilter[] FilterArray = new InputFilter[1];
@@ -301,8 +306,8 @@ public class LogbookActivity extends AppCompatActivity {
         dpd.show();
     }
 
+
     public void editableText(View view){
         timeTxt.setFocusableInTouchMode(true);
     }
-
 }
