@@ -319,7 +319,7 @@
             android:layout_marginBottom="138dp"
             android:textColor="#FFFF"
             android:background="@drawable/buttonshape"
-            android:text="Compute"
+            android:text="Calculate"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
