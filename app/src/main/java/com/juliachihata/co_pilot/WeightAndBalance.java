@@ -1,5 +1,6 @@
 package com.juliachihata.co_pilot;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.Objects;
 
 public class WeightAndBalance extends AppCompatActivity {
 
@@ -42,6 +44,9 @@ public class WeightAndBalance extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.weight_and_balance);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        }
             //link the elements from the layout to the java activity
             PlaneEditText = (EditText) findViewById(R.id.PlaneEditText);
             FuelEditText = (EditText) findViewById(R.id.FuelEditText);
