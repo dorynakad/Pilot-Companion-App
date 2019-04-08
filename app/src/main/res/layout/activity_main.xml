@@ -16,28 +16,28 @@
             android:clickable="true"
             android:onClick="goToAltCorrection"
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="38dp"
             android:layout_below="@+id/copilot_title"
             android:layout_alignStart="@+id/copilot_title"
             android:layout_alignLeft="@+id/copilot_title"
             android:layout_marginStart="70dp"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="33dp"
-            android:background="@drawable/alt_correction" />
+            android:background="@drawable/b_alt_correction" />
 
         <Button
             android:id="@+id/weightbalancebutton"
-            android:clickable="true"
-            android:onClick="goToWeightBalance"
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="38dp"
             android:layout_below="@+id/copilot_title"
             android:layout_alignStart="@+id/copilot_title"
             android:layout_alignLeft="@+id/copilot_title"
             android:layout_marginStart="70dp"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="87dp"
-            android:background="@drawable/weight_balance" />
+            android:background="@drawable/b_weight_balance"
+            android:clickable="true"
+            android:onClick="goToWeightBalance" />
 
         <TextView
             android:id="@+id/copilot_title"
