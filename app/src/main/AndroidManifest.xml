@@ -31,21 +31,26 @@
             />
         <activity
             android:name=".AltcorrectionActivity"
-            android:parentActivityName=".CalculationsActivity" />
+            android:parentActivityName=".CalculationsActivity"
+            android:label="  Altitude Correction Calculator"/>
 
         <activity android:name="WeightAndBalance"
             android:parentActivityName=".CalculationsActivity"
+            android:label=" Weight and Balance Calculator"
             />
 
         <activity
             android:name=".LogbookActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:label="                   Logbook"/>
         <activity
             android:name=".DictionaryActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:label="                   SKYbrary"/>
         <activity
             android:name=".AwarenessActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:label="        Awareness Test"/>
         <activity
             android:name=".CalculationsActivity"
             android:parentActivityName=".MainActivity" />

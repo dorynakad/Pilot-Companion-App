@@ -124,7 +124,7 @@
         android:layout_marginEnd="9dp"
         android:layout_marginRight="9dp"
         android:layout_marginBottom="540dp"
-        android:text="Input Airport Information"
+        android:text="Input Airport Information:"
         android:textColor="#FFF"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -165,7 +165,7 @@
         android:text="0"
         android:textAlignment="center"
         android:textColor="@android:color/white"
-        android:textSize="40sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -299,6 +299,7 @@
         android:text="Altitude Adjustment (ft):"
         android:textColor="#FFF"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -316,6 +317,7 @@
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -340,7 +342,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:imeOptions="actionNext"/>
+        android:imeOptions="actionDone"/>
 
     <Button
         android:id="@+id/calculate_button"

@@ -185,12 +185,13 @@ public class LogbookActivity extends AppCompatActivity {
         }
     }
 
-    Date currentTime = Calendar.getInstance().getTime();
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE, MMMM dd, yyyy 'at' HH:mm:ss");
-    String cTime = simpleDateFormat.format(currentTime);
+
 
     //Add
     private void add(){
+        Date currentTime = Calendar.getInstance().getTime();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE, MMMM dd, yyyy 'at' HH:mm:ss");
+        String cTime = simpleDateFormat.format(currentTime);
 
         String flightTime=timeTxt.getText().toString();
         String dateLog = date_view.getText().toString();
@@ -243,7 +244,7 @@ public class LogbookActivity extends AppCompatActivity {
                 adapter.remove(flightTimes.get(pos));
 
                 String new_record = save_record.replaceAll("^*(\\d|\\d.\\d*)(?= Hours)", flightTime);
-                new_record = new_record.replaceAll("(?<=\\[).*?(?=\\])", dateLog);
+               // new_record = new_record.replaceAll("(?<=\\[).*?(?=\\])", dateLog);
 
                 //Insert
                 adapter.insert(new_record, pos);

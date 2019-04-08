@@ -1,5 +1,6 @@
 package com.juliachihata.co_pilot;
 
+import android.app.ActionBar;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.app.AlarmManager;
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent int3= new Intent(MainActivity.this, DictionaryActivity.class);
+
                 startActivity(int3);
             }
         });
