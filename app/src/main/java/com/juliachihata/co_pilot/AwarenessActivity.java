@@ -10,6 +10,8 @@ import android.os.Build;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -25,7 +27,6 @@ public class AwarenessActivity extends AppCompatActivity {
     SeekBar timerSeekBar;
     Boolean counterIsActive = false;
     Button goButton,contButton;
-    ImageButton settingsButton;
     int red = android.R.color.holo_red_dark;
     int green = android.R.color.holo_green_dark;
     int mission;
@@ -45,7 +46,6 @@ public class AwarenessActivity extends AppCompatActivity {
         timerSeekBar.setEnabled(true);
         goButton.setText("Start Flight");
         goButton.setBackgroundResource(green);
-        settingsButton.setClickable(true);
         contButton.setVisibility(View.INVISIBLE);
 
         if(alarmManager != null){
@@ -103,7 +103,6 @@ public class AwarenessActivity extends AppCompatActivity {
         }.start();
 
         counterIsActive = true;
-        settingsButton.setClickable(false);
         timerSeekBar.setEnabled(false);
         goButton.setBackgroundResource(red);
         goButton.setText("Stop Flight");
@@ -141,8 +140,6 @@ public class AwarenessActivity extends AppCompatActivity {
         }
 
     }
-
-
 
     @Override
     protected void onStop() {
@@ -215,7 +212,6 @@ public class AwarenessActivity extends AppCompatActivity {
                 counterIsActive = false;
                 contButton.setVisibility(View.VISIBLE);
                 counterIsActive = true;
-                settingsButton.setClickable(false);
                 timerSeekBar.setEnabled(false);
                 goButton.setBackgroundResource(red);
                 goButton.setText("Stop Flight");
@@ -238,7 +234,6 @@ public class AwarenessActivity extends AppCompatActivity {
         timerTextView = findViewById(R.id.tr_edittext);
         goButton = findViewById(R.id.startflight_button);
         contButton = findViewById(R.id.continue_button);
-        settingsButton = findViewById(R.id.settings_button);
         goButton.setVisibility(View.VISIBLE);
         contButton.setVisibility(View.INVISIBLE);
 
@@ -254,14 +249,6 @@ public class AwarenessActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-            }
-        });
-
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(AwarenessActivity.this, DifficultyActivity.class);
-                startActivity(intent);
             }
         });
 
@@ -301,6 +288,24 @@ public class AwarenessActivity extends AppCompatActivity {
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_settings, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Intent intent= new Intent(AwarenessActivity.this, DifficultyActivity.class);
+                startActivity(intent);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

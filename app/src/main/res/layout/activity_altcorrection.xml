@@ -230,7 +230,6 @@
         android:id="@+id/temptext"
         android:layout_width="97dp"
         android:layout_height="40dp"
-
         android:layout_marginStart="47dp"
         android:layout_marginLeft="47dp"
         android:layout_marginTop="98dp"

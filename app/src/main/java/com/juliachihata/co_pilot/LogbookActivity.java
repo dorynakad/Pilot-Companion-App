@@ -198,7 +198,7 @@ public class LogbookActivity extends AppCompatActivity {
         if(!flightTime.isEmpty() && flightTime.length()>0){
             if (dateLog.isEmpty())
                 Toast.makeText(getApplicationContext(),"Please choose a date", Toast.LENGTH_LONG).show();
-            if (Double.parseDouble(flightTime) < 0.25 || Double.parseDouble(flightTime) > 5){
+            else if (Double.parseDouble(flightTime) < 0.25 || Double.parseDouble(flightTime) > 5){
                 Toast.makeText(getApplicationContext(),"Error!\nMin time: 0.25 h\nMax time: 5 h", Toast.LENGTH_LONG).show();
             }
             else {

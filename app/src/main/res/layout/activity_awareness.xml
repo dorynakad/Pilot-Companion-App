@@ -121,16 +121,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tr_edittext" />
 
-    <ImageButton
-        android:id="@+id/settings_button"
-        android:layout_width="71dp"
-        android:layout_height="69dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/settingsgears" />
-
 
 </android.support.constraint.ConstraintLayout>
