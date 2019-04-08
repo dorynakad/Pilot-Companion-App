@@ -42,11 +42,14 @@
         <activity
             android:name=".LogbookActivity"
             android:parentActivityName=".MainActivity"
-            android:label="                   Logbook"/>
+            android:label="                   Logbook"
+            />
         <activity
             android:name=".DictionaryActivity"
             android:parentActivityName=".MainActivity"
-            android:label="                   SKYbrary"/>
+            android:label="                   SKYbrary"
+            android:windowSoftInputMode="stateHidden"
+            />
         <activity
             android:name=".AwarenessActivity"
             android:parentActivityName=".MainActivity"

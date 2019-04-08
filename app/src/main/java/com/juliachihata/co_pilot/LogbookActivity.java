@@ -108,7 +108,7 @@ public class LogbookActivity extends AppCompatActivity {
         });
 
 
-       //  int cPos=-1;
+
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
