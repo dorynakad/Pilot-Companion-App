@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         but2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent int2= new Intent(MainActivity.this, DifficultyActivity.class);
+                Intent int2= new Intent(MainActivity.this, AwarenessActivity.class);
                 startActivity(int2);
             }
 
