@@ -42,15 +42,6 @@ public class BluetoothActivity extends AppCompatActivity {
         Intent newint = getIntent();
         address = newint.getStringExtra(BluetoothSettingActivity.EXTRA_ADDRESS);
 
-        setContentView(R.layout.activity_bluetooth);
-
-        btn1 = (Button) findViewById(R.id.button2);
-        btn2 = (Button) findViewById(R.id.button3);
-        btn3 = (Button) findViewById(R.id.button5);
-        btn4 = (Button) findViewById(R.id.button6);
-        btnReturn = (Button) findViewById(R.id.returnbutton);
-        btnDis = (Button) findViewById(R.id.button4);
-        lumn = (TextView) findViewById(R.id.textView2);
 
         new ConnectBT().execute();
 
