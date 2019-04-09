@@ -250,7 +250,7 @@ public class LogbookActivity extends AppCompatActivity {
             else {
                 //Add
                 if (!dateLog.isEmpty()) {
-                    adapter.add( "[" + dateLog + "]    " + flightTime + " Hours");
+                    adapter.insert( "[" + dateLog + "]    " + flightTime + " Hours",0);
                     saveEntries();
                     total = total + (Double.parseDouble(flightTime));
                 }

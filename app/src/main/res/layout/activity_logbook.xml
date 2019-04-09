@@ -135,6 +135,8 @@
         app:layout_constraintStart_toEndOf="@+id/timeTxt"
         app:layout_constraintTop_toTopOf="@+id/timeTxt" />
 
+
+
     <Button
         android:id="@+id/deleteBtn"
         android:layout_width="94dp"
@@ -214,7 +216,9 @@
         android:fadingEdgeLength="0dp"
         android:fillViewport="true"
         android:overScrollMode="never"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="261dp">
 
         <LinearLayout
             android:layout_width="match_parent"
