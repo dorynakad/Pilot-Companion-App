@@ -51,7 +51,9 @@
             android:name=".LogbookActivity"
             android:parentActivityName=".MainActivity"
             android:label="                   Logbook"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            />
         <activity
             android:name=".DictionaryActivity"
             android:parentActivityName=".MainActivity"
