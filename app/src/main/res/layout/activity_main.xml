@@ -9,21 +9,24 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp">
 
         <Button
             android:id="@+id/altcorrection_button"
-            android:clickable="true"
-            android:onClick="goToAltCorrection"
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:layout_below="@+id/copilot_title"
             android:layout_alignStart="@+id/copilot_title"
             android:layout_alignLeft="@+id/copilot_title"
             android:layout_marginStart="70dp"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="33dp"
-            android:background="@drawable/alt_correction" />
+            android:background="@drawable/c_altitude"
+            android:clickable="true"
+            android:onClick="goToAltCorrection" />
 
         <Button
             android:id="@+id/weightbalancebutton"
@@ -35,7 +38,7 @@
             android:layout_marginStart="70dp"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="87dp"
-            android:background="@drawable/weight_balance"
+            android:background="@drawable/c_wb"
             android:clickable="true"
             android:onClick="goToWeightBalance" />
 
@@ -61,17 +64,19 @@
 
         <TextView
             android:id="@+id/calculations_text"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/calculations_button"
-            android:layout_marginLeft="70dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="73dp"
+            android:layout_marginLeft="73dp"
             android:layout_marginTop="10dp"
             android:text="Calculations"
-            android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="#FFF"
-            android:textSize="17sp"
-            />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/dictionary_button"
@@ -87,20 +92,20 @@
 
         <TextView
             android:id="@+id/dictionary_text"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
             android:layout_below="@id/dictionary_button"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="70dp"
-            android:layout_marginLeft="70dp"
+            android:layout_marginStart="84dp"
+            android:layout_marginLeft="84dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="77dp"
-            android:text="Dictionary"
+            android:layout_marginBottom="66dp"
+            android:text="SKYbrary"
             android:textAlignment="center"
             android:textColor="#FFF"
-            android:textSize="17dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
 
@@ -116,17 +121,17 @@
 
         <TextView
             android:id="@+id/awareness_text"
-            android:textStyle="bold"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/awareness_button"
             android:layout_alignRight="@id/copilot_title"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="70dp"
+            android:layout_marginRight="77dp"
             android:text="Awareness"
-            android:textSize="17dp"
             android:textAlignment="center"
-            android:textColor="#FFF" />
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/logbook_button"
@@ -141,18 +146,18 @@
 
         <TextView
             android:id="@+id/logbook_text"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
             android:layout_below="@id/logbook_button"
             android:layout_alignRight="@id/copilot_title"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="70dp"
-            android:layout_marginBottom="77dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginRight="83dp"
+            android:layout_marginBottom="69dp"
             android:text="LogBook"
             android:textAlignment="center"
             android:textColor="#FFF"
-            android:textSize="17dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </RelativeLayout>
