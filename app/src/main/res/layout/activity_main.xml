@@ -11,6 +11,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/altcorrection_button"
+            android:clickable="true"
+            android:onClick="goToAltCorrection"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_below="@+id/copilot_title"
+            android:layout_alignStart="@+id/copilot_title"
+            android:layout_alignLeft="@+id/copilot_title"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="33dp"
+            android:background="@drawable/b_alt_correction" />
+
+        <Button
+            android:id="@+id/weightbalancebutton"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_below="@+id/copilot_title"
+            android:layout_alignStart="@+id/copilot_title"
+            android:layout_alignLeft="@+id/copilot_title"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="87dp"
+            android:background="@drawable/b_weight_balance"
+            android:clickable="true"
+            android:onClick="goToWeightBalance" />
+
         <TextView
             android:id="@+id/copilot_title"
             android:layout_width="match_parent"
@@ -107,16 +135,6 @@
             android:text="LogBook"
             android:textAlignment="center"
             android:textColor="#FFF" />
-
-        <Button
-            android:id="@+id/blue_button"
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="300dp"
-            android:layout_marginBottom="20dp"
-            android:background="#2A384A"
-            android:text="Bluetooth"
-            android:textColor="@android:color/white" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

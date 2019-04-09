@@ -1,23 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DictionaryActivity"
+    tools:context="com.juliachihata.co_pilot.DictionaryActivity"
     android:background="@drawable/bg"
-
     >
 
 
-    <TextView
+    <ImageView
+        android:layout_width="22dp"
+        android:layout_height="24dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/search" />
+
+    <EditText
+        android:id="@+id/searchFilter"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/bg"
+        android:hint="Search"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textColorHint="@android:color/darker_gray"
+        android:digits="abcdefghijklmnopqrstuvwxyz"
+
+        />
+
+    <ListView
+        android:id="@+id/theList"
+        android:layout_width="wrap_content"
+        android:layout_height="534dp"
+        android:layout_below="@+id/searchFilter"
+
+        android:background="@drawable/bg" />
+
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Dictionary Activity"
-        android:textAlignment="center"
-        android:textColor="#FFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_above="@+id/theList"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="-15dp"
+        android:src="@drawable/separator"
+        />
+
+</RelativeLayout>

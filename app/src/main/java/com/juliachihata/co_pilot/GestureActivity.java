@@ -249,7 +249,7 @@ public class GestureActivity extends AppCompatActivity {
 
         time = repeat * seconds;
 
-        timer = new CountDownTimer(time, 1000) {
+        timer = new CountDownTimer(time+750, 1000) {
 
             @Override
             public void onTick(long l) {
@@ -259,7 +259,9 @@ public class GestureActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                       secondsTextView.setText(0+"");
+                secondsTextView.setText(0+"");
+                sleep(6000);
+                onStop();
             }
         }.start();
         run1 = new arrowThread(repeat, seconds, score);
@@ -564,12 +566,8 @@ public class GestureActivity extends AppCompatActivity {
                     sleep(500);
                 }
             });
-
-            sleep(6000);
-
-            onStop();
-
         }
+
 
     }
 
