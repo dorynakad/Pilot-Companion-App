@@ -10,9 +10,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/altcorrection_button"
@@ -58,6 +60,9 @@
             android:layout_width="80dp"
             android:layout_height="100dp"
             android:layout_below="@id/copilot_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="80dp"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/cal_icon" />
@@ -69,42 +74,48 @@
             android:layout_below="@id/calculations_button"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="69dp"
-            android:layout_marginLeft="69dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
             android:layout_marginTop="10dp"
             android:text="Calculations"
             android:textAlignment="center"
             android:textColor="#FFF"
-            android:textSize="19dp"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/dictionary_button"
             android:layout_width="80dp"
             android:layout_height="100dp"
-            android:layout_below="@id/calculations_text"
+            android:layout_below="@+id/calculations_button"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginStart="81dp"
+            android:layout_marginLeft="81dp"
+            android:layout_marginTop="109dp"
             android:background="@drawable/dictionary_icon" />
 
         <TextView
             android:id="@+id/dictionary_text"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_below="@id/dictionary_button"
-            android:layout_alignStart="@+id/calculations_button"
+            android:layout_width="80dp"
+            android:layout_height="24dp"
+            android:layout_below="@+id/dictionary_button"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="71dp"
+            android:layout_marginStart="87dp"
+            android:layout_marginLeft="87dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="82dp"
+            android:layout_toStartOf="@+id/logbook_text"
+            android:layout_toLeftOf="@+id/logbook_text"
             android:text="SKYbrary"
             android:textAlignment="center"
             android:textColor="#FFF"
-            android:textSize="19dp"
-            android:textStyle="bold"
-            android:layout_alignLeft="@+id/calculations_button" />
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
 
         <Button
@@ -123,21 +134,21 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/awareness_button"
             android:layout_alignRight="@id/copilot_title"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="69dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="79dp"
             android:text="Awareness"
             android:textAlignment="center"
             android:textColor="#FFF"
-            android:textSize="19dp"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/logbook_button"
             android:layout_width="80dp"
             android:layout_height="100dp"
-            android:layout_below="@id/awareness_text"
+            android:layout_below="@+id/awareness_button"
             android:layout_alignRight="@id/copilot_title"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="110dp"
             android:layout_marginRight="80dp"
             android:background="@drawable/logbook_icon"
             tools:ignore="UnknownId" />
@@ -146,16 +157,16 @@
             android:id="@+id/logbook_text"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
-            android:layout_below="@id/logbook_button"
+            android:layout_below="@+id/logbook_button"
             android:layout_alignRight="@id/copilot_title"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="83dp"
-            android:layout_marginBottom="69dp"
+            android:layout_marginRight="88dp"
+            android:layout_marginBottom="76dp"
             android:text="LogBook"
             android:textAlignment="center"
             android:textColor="#FFF"
-            android:textSize="19dp"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
     </RelativeLayout>
