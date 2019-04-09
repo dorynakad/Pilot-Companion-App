@@ -93,9 +93,26 @@ public class LogbookActivity extends AppCompatActivity {
 
         lv.setAdapter(adapter);
         //Set selected item
+        lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int pos, long id) {
+                if(cPos == pos)
+                {
+                    if(lv.isItemChecked(cPos))
+                    {
+                        lv.setItemChecked(pos, false);
+                    }
+                    else{
+                        lv.setItemChecked(pos,true);
+                    }
+                }
+                else
+                    {
+                    lv.setItemChecked(pos,true);
+                }
+                cPos=lv.getCheckedItemPosition();
+
 
                 // This is to match the content of the input added/ to be updated
                 Pattern p_t = Pattern.compile("^*(\\d|\\d.\\d*)(?= Hours)");
@@ -114,7 +131,7 @@ public class LogbookActivity extends AppCompatActivity {
         });
 
 
-
+/*
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -134,7 +151,7 @@ public class LogbookActivity extends AppCompatActivity {
             }
         });
 
-
+*/
 
         //Handle events
         addBtn.setOnClickListener(new View.OnClickListener() {
@@ -233,7 +250,7 @@ public class LogbookActivity extends AppCompatActivity {
             else {
                 //Add
                 if (!dateLog.isEmpty()) {
-                    adapter.add( "[" + dateLog + "]    " + flightTime + " Hours");
+                    adapter.insert( "[" + dateLog + "]    " + flightTime + " Hours",0);
                     saveEntries();
                     total = total + (Double.parseDouble(flightTime));
                 }
@@ -273,7 +290,7 @@ public class LogbookActivity extends AppCompatActivity {
                 adapter.remove(flightTimes.get(pos));
 
                 String new_record = save_record.replaceAll("^*(\\d|\\d.\\d*)(?= Hours)", flightTime);
-               // new_record = new_record.replaceAll("(?<=\\[).*?(?=\\])", dateLog);
+                new_record = new_record.replaceAll("(?<=\\[).*?(?=\\])", dateLog);
 
                 //Insert
                 adapter.insert(new_record, pos);
@@ -323,7 +340,7 @@ public class LogbookActivity extends AppCompatActivity {
         DatePickerDialog dpd = new DatePickerDialog(LogbookActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int y, int m, int d) {
-                date_view.setText(m + " / " + d + ", " + y);
+                date_view.setText(m + " / " + d + " / " + y);
             }
         }, day, month, year);
         dpd.getDatePicker().setMaxDate(System.currentTimeMillis());
