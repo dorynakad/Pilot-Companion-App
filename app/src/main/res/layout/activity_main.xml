@@ -66,16 +66,16 @@
             android:id="@+id/calculations_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/calculations_button"
+            android:layout_below="@+id/calculations_button"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="73dp"
-            android:layout_marginLeft="73dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginLeft="68dp"
+            android:layout_marginTop="9dp"
             android:text="Calculations"
             android:textAlignment="center"
             android:textColor="#FFF"
-            android:textSize="20sp"
+            android:textSize="19dp"
             android:textStyle="bold" />
 
         <Button
@@ -98,14 +98,14 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="84dp"
-            android:layout_marginLeft="84dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="66dp"
+            android:layout_marginStart="79dp"
+            android:layout_marginLeft="79dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="69dp"
             android:text="SKYbrary"
             android:textAlignment="center"
             android:textColor="#FFF"
-            android:textSize="20sp"
+            android:textSize="19dp"
             android:textStyle="bold" />
 
 
@@ -125,12 +125,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/awareness_button"
             android:layout_alignRight="@id/copilot_title"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="77dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginRight="66dp"
             android:text="Awareness"
             android:textAlignment="center"
             android:textColor="#FFF"
-            android:textSize="20sp"
+            android:textSize="19dp"
             android:textStyle="bold" />
 
         <Button
@@ -151,13 +151,13 @@
             android:layout_below="@id/logbook_button"
             android:layout_alignRight="@id/copilot_title"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="8dp"
             android:layout_marginRight="83dp"
-            android:layout_marginBottom="69dp"
+            android:layout_marginBottom="73dp"
             android:text="LogBook"
             android:textAlignment="center"
             android:textColor="#FFF"
-            android:textSize="20sp"
+            android:textSize="19dp"
             android:textStyle="bold" />
 
     </RelativeLayout>
