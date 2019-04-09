@@ -51,11 +51,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+
+
         android:background="@drawable/bg"
-        android:divider="@android:color/black"
-        android:dividerHeight="1dp"
-        android:headerDividersEnabled="true"
-        android:layout_marginLeft="50dp"
         />
 
     <ImageView

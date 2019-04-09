@@ -169,9 +169,6 @@ public class DictionaryActivity extends AppCompatActivity {
         names.add("TODA                       take-off distance available");
         names.add("TORA                                 take-off run available");
         names.add("TOT                           turbine outlet temperature");
-
-
-
         names.add("UHF                                       ultrahigh frequency");
         names.add("UNICOM                   universal communications");
         names.add("UTC                      Co-Ordinated Universal Time");
