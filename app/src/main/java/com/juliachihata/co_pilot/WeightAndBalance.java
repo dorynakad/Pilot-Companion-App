@@ -99,6 +99,22 @@ public class WeightAndBalance extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Warning: Field is empty", Toast.LENGTH_SHORT).show();
 
                 }
+
+
+
+                else if ((Double.parseDouble(FuelEditText.getText().toString())) > 100000 || (Double.parseDouble(PlaneEditText.getText().toString())) < 1000)
+                    Toast.makeText(getApplicationContext(), "Warning: Fuel Weight must be between 1000 and 100,000", Toast.LENGTH_SHORT).show();
+
+                else if ((Double.parseDouble(BaggageAreaEditText.getText().toString())) > 1000 || (Double.parseDouble(PlaneEditText.getText().toString())) < 0)
+                    Toast.makeText(getApplicationContext(), "Warning: Baggage Weight must be between 0 and 1000", Toast.LENGTH_SHORT).show();
+
+                else if ((Double.parseDouble(PlaneEditText.getText().toString())) > 2500 || (Double.parseDouble(PlaneEditText.getText().toString())) < 1000)
+                    Toast.makeText(getApplicationContext(), "Warning: Plane Weight must be between 1000 and 2500", Toast.LENGTH_SHORT).show();
+
+                else if ((Double.parseDouble(PilotPassEditText.getText().toString())) > 2000 || (Double.parseDouble(PlaneEditText.getText().toString())) < 50)
+                    Toast.makeText(getApplicationContext(), "Warning: Passenger Weight must be between 1000 and 2500", Toast.LENGTH_SHORT).show();
+
+
                 else
                 {
                 //converts the string into an integer and assigns it to the variable
@@ -108,8 +124,8 @@ public class WeightAndBalance extends AppCompatActivity {
                 bagageAreaWeight=Double.parseDouble(BaggageAreaEditText.getText().toString());
 
 
-                SumMomentTextView.setText("sum of weight is "+sumWeights());
-                SumWeightTextView.setText("sum of moment is "+sumMomentum());
+                SumMomentTextView.setText("Sum of Weight is \n"+sumWeights());
+                SumWeightTextView.setText("Sum of Moment is "+sumMomentum());
             }}
         });
     }

@@ -208,13 +208,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:imeOptions="actionNext"/>
+            android:imeOptions="actionDone"/>
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="38dp"
-
             android:layout_marginLeft="38dp"
             android:layout_marginTop="437dp"
             android:layout_marginEnd="343dp"
@@ -279,7 +278,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:imeOptions="actionDone"/>
+            android:imeOptions="actionNext"/>
 
         <TextView
             android:id="@+id/SumWeightTextView"
