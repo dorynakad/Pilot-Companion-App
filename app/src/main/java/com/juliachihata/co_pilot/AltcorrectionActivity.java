@@ -69,6 +69,10 @@ public class AltcorrectionActivity extends AppCompatActivity {
                     else if (alt < 200 || alt > 5000){
                         Toast.makeText(getApplicationContext(),"Error: Altitude must be between 200 and 5000",Toast.LENGTH_SHORT).show();
                     }
+                    else if ((uncoralt-alt)<200)
+                    {
+                        Toast.makeText(getApplicationContext(),"Error: Current Uncorrected Altitude must be 200 ft greater than Airport Altitude",Toast.LENGTH_SHORT).show();
+                    }
                     else{
                         alt = roundAirportElevation(alt);
                         temp = roundTempValue(temp);
