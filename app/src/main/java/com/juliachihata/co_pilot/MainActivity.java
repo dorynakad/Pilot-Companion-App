@@ -106,22 +106,22 @@ public class MainActivity extends AppCompatActivity {
         but1_2.setAlpha(0);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_bt, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_bt:
-                Intent int5= new Intent(MainActivity.this, BluetoothSettingActivity.class);
-                startActivity(int5);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_bt, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.action_bt:
+//                Intent int5= new Intent(MainActivity.this, BluetoothSettingActivity.class);
+//                startActivity(int5);
+//                return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     public void goToAltCorrection(View v){
         Intent int1= new Intent(MainActivity.this, AltcorrectionActivity.class);
