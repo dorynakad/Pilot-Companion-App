@@ -189,7 +189,7 @@
             android:layout_marginRight="124dp"
             android:text="Perfrom the Following Gesture:"
             android:textColor="@android:color/white"
-            android:textSize="23dp"
+            android:textSize="20dp"
             android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
