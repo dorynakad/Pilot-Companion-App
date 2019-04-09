@@ -41,7 +41,7 @@
         android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:onClick="setDate"
-        android:textSize="24sp"
+        android:textSize="20dp"
         app:layout_constraintEnd_toStartOf="@+id/time_icon"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,6 +99,7 @@
         app:layout_constraintStart_toEndOf="@+id/date"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <EditText
         android:id="@+id/timeTxt"
         android:focusableInTouchMode="true"
@@ -115,7 +116,7 @@
         android:inputType="numberDecimal"
         android:textColor="#FF3698EE"
         android:textColorHint="@android:color/darker_gray"
-        android:textSize="24sp"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/time_icon"
