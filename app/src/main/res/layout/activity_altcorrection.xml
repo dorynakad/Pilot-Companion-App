@@ -242,8 +242,8 @@
 
         android:hint="(˚C)"
         android:imeOptions="actionNext"
-        android:inputType="numberDecimal|numberSigned"
         android:textColor="#FF3698EE"
+        android:inputType="numberSigned"
         android:textColorHint="#7D7D7D"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
