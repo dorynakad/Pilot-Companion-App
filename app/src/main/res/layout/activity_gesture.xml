@@ -36,8 +36,8 @@
 
         <TextView
             android:id="@+id/result"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="204dp"
@@ -46,7 +46,7 @@
             android:layout_marginBottom="15dp"
             android:gravity="center"
             android:text="Waiting..."
-            android:textSize="60dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/messagetext"
             app:layout_constraintEnd_toEndOf="parent"
@@ -92,11 +92,14 @@
         android:id="@+id/missionLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/imageView16"
             android:layout_width="667dp"
             android:layout_height="545dp"
             android:layout_marginStart="8dp"
@@ -166,7 +169,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="308dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:gravity="center"
@@ -176,7 +179,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sqnc_edittext" />
+            app:layout_constraintTop_toBottomOf="@+id/info_edittext" />
 
         <TextView
             android:id="@+id/info_edittext"
@@ -236,13 +239,12 @@
             android:layout_marginBottom="212dp"
             android:text=" "
             android:textColor="#FF3698EE"
-            android:textSize="150dp"
+            android:textSize="300dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/info_edittext"
-            app:layout_constraintVertical_bias="0.437" />
+            app:layout_constraintVertical_bias="0.632" />
 
         <TextView
             android:id="@+id/rounds_edittext"
