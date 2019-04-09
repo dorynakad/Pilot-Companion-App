@@ -101,7 +101,8 @@
 
     <EditText
         android:id="@+id/timeTxt"
-        android:focusable="false"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
         android:clickable="true"
         android:onClick="editableText"
         android:layout_width="80dp"
