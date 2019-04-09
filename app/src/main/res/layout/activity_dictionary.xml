@@ -38,7 +38,8 @@
         android:textSize="18dp"
         android:textColor="@android:color/holo_blue_dark"
         android:textColorHint="@android:color/darker_gray"
-        android:digits="abcdefghijklmnopqrstuvwxyz"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
 
         />
 
@@ -51,8 +52,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-
-
         android:background="@drawable/bg"
         />
 
