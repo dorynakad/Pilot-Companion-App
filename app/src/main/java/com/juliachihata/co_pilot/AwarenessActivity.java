@@ -43,6 +43,7 @@ public class AwarenessActivity extends AppCompatActivity {
     public void resetTimer() {
         progress = timerSeekBar.getProgress();
         updateTimer(progress);
+        settingsButton.setVisibility(View.VISIBLE);
         timerSeekBar.setProgress(progress);
         timerSeekBar.setEnabled(true);
         goButton.setText("START FLIGHT");
@@ -65,6 +66,7 @@ public class AwarenessActivity extends AppCompatActivity {
 
     private void startTimer() {
         contButton.setVisibility(View.INVISIBLE);
+        settingsButton.setVisibility(View.INVISIBLE);
         endTime = System.currentTimeMillis() + timeleftms;
         Toast.makeText(getApplicationContext(),timeleftms+"",Toast.LENGTH_SHORT).show();
         SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
@@ -183,7 +185,7 @@ public class AwarenessActivity extends AppCompatActivity {
         mission = preferences.getInt("mission", 1);
         timerSeekBar.setMax(eft/2);
 
-
+        settingsButton.setVisibility(View.VISIBLE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             timerSeekBar.setMin(10);
         }
@@ -216,6 +218,7 @@ public class AwarenessActivity extends AppCompatActivity {
                 timerSeekBar.setProgress(progress);
                 counterIsActive = false;
                 contButton.setVisibility(View.VISIBLE);
+                settingsButton.setVisibility(View.INVISIBLE);
                 counterIsActive = true;
                 settingsButton.setClickable(false);
                 timerSeekBar.setEnabled(false);

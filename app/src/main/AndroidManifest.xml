@@ -15,7 +15,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".BluetoothSettingActivity"></activity>
         <activity android:name=".BluetoothActivity" />
-        <activity android:name=".GestureActivity" />
+        <activity android:name=".GestureActivity"
+            android:label="            Awareness Test" />
         <activity android:name=".MissionActivity" />
         <activity android:name=".ActivitySplash">
             <intent-filter>
@@ -28,6 +29,7 @@
         <activity
             android:name=".DifficultyActivity"
             android:parentActivityName=".AwarenessActivity"
+            android:label="            Awareness Settings"
             />
         <activity
             android:name=".AltcorrectionActivity"
@@ -38,7 +40,6 @@
             android:parentActivityName=".CalculationsActivity"
             android:label=" Weight and Balance Calculator"
             />
-
         <activity
             android:name=".LogbookActivity"
             android:parentActivityName=".MainActivity"
@@ -50,11 +51,14 @@
         <activity
             android:name=".AwarenessActivity"
             android:parentActivityName=".MainActivity"
-            android:label="        Awareness Test"/>
+            android:label="              Awareness Timer"/>
+
         <activity
             android:name=".CalculationsActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

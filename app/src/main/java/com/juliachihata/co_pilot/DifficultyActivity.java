@@ -119,7 +119,6 @@ public class DifficultyActivity extends AppCompatActivity {
 
 
         //back button
-        getSupportActionBar().setTitle("Awareness");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         efttext = findViewById(R.id.eft_text);
@@ -134,6 +133,9 @@ public class DifficultyActivity extends AppCompatActivity {
 
         difbar.setMax(2);
         difbar.setProgress(1);
+
+        updatedif(difbar.getProgress());
+        updateeft(eftbar.getProgress());
 
         eftbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
