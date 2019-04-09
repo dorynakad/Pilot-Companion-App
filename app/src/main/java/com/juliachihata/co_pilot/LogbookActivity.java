@@ -32,6 +32,7 @@ public class LogbookActivity extends AppCompatActivity {
 
     HashSet<String> emptySet;  //Creating an empty set so that the set would be "empty" and not "invalid" in case it is
     ListView lv;
+    int cPos=-1;
     TextView date_view;
     EditText timeTxt, timeTxt2;
     Button  addBtn,updateBtn,clearBtn,deleteBtn;
@@ -106,6 +107,29 @@ public class LogbookActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
+        lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(cPos == position){
+                    if(lv.isItemChecked(cPos)) {
+                        lv.setItemChecked(position, false);
+                    }
+                    else{
+                        lv.setItemChecked(position,true);
+                    }
+                }
+                else {
+                    lv.setItemChecked(position,true);
+                }
+                cPos=lv.getCheckedItemPosition();
+            }
+        });
+
+
 
         //Handle events
         addBtn.setOnClickListener(new View.OnClickListener() {
