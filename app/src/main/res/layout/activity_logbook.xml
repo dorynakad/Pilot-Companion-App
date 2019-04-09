@@ -41,7 +41,7 @@
         android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:onClick="setDate"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/time_icon"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,7 +115,7 @@
         android:inputType="numberDecimal"
         android:textColor="@android:color/holo_blue_dark"
         android:textColorHint="@android:color/darker_gray"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/time_icon"
@@ -134,8 +134,6 @@
         android:textSize="15dp"
         app:layout_constraintStart_toEndOf="@+id/timeTxt"
         app:layout_constraintTop_toTopOf="@+id/timeTxt" />
-
-
 
     <Button
         android:id="@+id/deleteBtn"
@@ -209,42 +207,37 @@
         app:layout_constraintVertical_bias="0.033" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        android:layout_marginVertical="100dp"
-        android:fadingEdgeLength="0dp"
-        android:fillViewport="true"
-        android:overScrollMode="never"
-        android:scrollbars="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="261dp">
+        android:layout_width="416dp"
+        android:layout_height="452dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateBtn">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@+id/updateBtn">
 
-
-
             <ListView
                 android:id="@+id/listView"
-                android:layout_width="wrap_content"
-                android:layout_height="342dp"
+                android:layout_width="match_parent"
+                android:layout_height="546dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:alwaysDrawnWithCache="true"
                 android:background="@android:color/transparent"
                 android:choiceMode="singleChoice"
                 android:divider="@android:color/darker_gray"
                 android:dividerHeight="1dp"
-                android:headerDividersEnabled="true"
+                android:headerDividersEnabled="false"
                 android:horizontalSpacing="3dp"
-                android:verticalSpacing="3dp" />
+                android:verticalSpacing="3dp"
+                />
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
-
