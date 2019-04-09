@@ -9,7 +9,7 @@
 
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -51,7 +51,9 @@
             android:name=".LogbookActivity"
             android:parentActivityName=".MainActivity"
             android:label="                   Logbook"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            />
         <activity
             android:name=".DictionaryActivity"
             android:parentActivityName=".MainActivity"

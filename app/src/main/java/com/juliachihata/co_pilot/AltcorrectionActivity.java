@@ -63,11 +63,11 @@ public class AltcorrectionActivity extends AppCompatActivity {
                     alt = Integer.parseInt(altS);
                     uncoralt = Integer.parseInt(unCorAltS);
 
-                    if (temp < -40 || temp > 10){
-                        Toast.makeText(getApplicationContext(),"Error: -40 ≤ temperature ≤ 10",Toast.LENGTH_SHORT).show();
+                    if (temp < -50 || temp > 0){
+                        Toast.makeText(getApplicationContext(),"Error: Temperature must be between -50 and 0",Toast.LENGTH_SHORT).show();
                     }
                     else if (alt < 200 || alt > 5000){
-                        Toast.makeText(getApplicationContext(),"Error: 200 ≤ altitude ≤ 5000",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Error: Altitude must be between 200 and 5000",Toast.LENGTH_SHORT).show();
                     }
                     else{
                         alt = roundAirportElevation(alt);
@@ -92,7 +92,7 @@ public class AltcorrectionActivity extends AppCompatActivity {
     //rounding airport elevation to the 100's
     public int roundAirportElevation(int a)
     {
-        return Math.round(a * 100) / 100;
+        return Math.round(a / 100) * 100;
     }
 
     public int height(int uncorrectedAltitude, int a){
@@ -102,15 +102,14 @@ public class AltcorrectionActivity extends AppCompatActivity {
     //rounding t to the 10th
     public int roundTempValue(int t)
     {
-        return Math.round(t * 10) / 10;
+        return Math.round(t / 10) * 10;
     }
 
     int coldCal(int t , int h) {
         int chart;
         int newh = 0;
 
-        if (t == 0) {
-
+        if (t ==0) {
             if (h >= 200 && h < 250) {
                 chart = 20;
                 newh = (chart * h) / 200;
