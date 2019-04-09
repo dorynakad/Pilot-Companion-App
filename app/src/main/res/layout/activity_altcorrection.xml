@@ -238,7 +238,7 @@
         android:layout_marginBottom="465dp"
         android:ems="10"
         android:hint="(˚C)"
-        android:inputType="numberDecimal|numberSigned"
+        android:inputType="numberSigned"
         android:textColor="@android:color/holo_blue_light"
         android:textColorHint="#7D7D7D"
         app:layout_constraintBottom_toBottomOf="parent"

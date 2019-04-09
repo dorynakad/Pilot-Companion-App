@@ -262,7 +262,7 @@ public class LogbookActivity extends AppCompatActivity {
                 timeTxt.setText("");
                 date_view.setText("");
 
-                Toast.makeText(getApplicationContext(),"Successfully Added!" + total, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Successfully Added!", Toast.LENGTH_SHORT).show();
             }
         }
         else {
