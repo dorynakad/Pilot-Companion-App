@@ -77,34 +77,13 @@ public class DifficultyActivity extends AppCompatActivity {
         diftext.setText(difficulty);
     }
 
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.gesture_button:
-                if (checked) {
-                    mission = 1;
-                    break;
-                }
-            case R.id.ari_button:
-                if (checked) {
-                    mission = 2;
-                    break;
-                }
-        }
-
-        saveinfo();
-
-    }
 
     public void saveinfo(){
         SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putInt("eft",total);
         editor.putInt("difficulty",difint);
-        editor.putInt("mission",mission);
         editor.putBoolean("settingsaved",true);
         savebutton.setClickable(false);
         editor.commit();

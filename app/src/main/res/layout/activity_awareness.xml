@@ -13,8 +13,8 @@
 
         <Button
             android:id="@+id/continue_button"
-            android:layout_width="250dp"
-            android:layout_height="68dp"
+            android:layout_width="335dp"
+            android:layout_height="52dp"
             android:layout_marginStart="130dp"
             android:layout_marginLeft="130dp"
             android:layout_marginEnd="131dp"
@@ -22,7 +22,7 @@
             android:layout_marginBottom="120dp"
             android:background="@android:color/holo_orange_light"
             android:text="CONTINUE FLIGHT"
-            android:textColor="@android:color/background_light"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             android:visibility="invisible"
@@ -101,6 +101,7 @@
         android:textAllCaps="false"
         android:textColor="#FFF"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
