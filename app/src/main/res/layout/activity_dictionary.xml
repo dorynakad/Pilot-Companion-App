@@ -42,10 +42,11 @@
 
     <ListView
         android:id="@+id/theList"
-        android:layout_width="wrap_content"
-        android:layout_height="534dp"
+        android:layout_width="388dp"
+        android:layout_height="535dp"
         android:layout_below="@+id/searchFilter"
 
+        android:layout_marginTop="-1dp"
         android:background="@drawable/bg" />
 
     <ImageView
@@ -56,8 +57,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginBottom="-15dp"
-        android:src="@drawable/separator"
-        />
+        android:layout_marginBottom="-9dp"
+        android:src="@drawable/separator" />
 
 </RelativeLayout>

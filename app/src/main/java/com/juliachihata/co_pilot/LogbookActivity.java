@@ -38,6 +38,7 @@ public class LogbookActivity extends AppCompatActivity {
     ArrayList<String> flightTimes;
     ArrayAdapter<String> adapter;
     SharedPreferences sharedPreferences;
+    double total=0;
 
     private int day, month, year;
 //    int white = android.R.color.white;
@@ -189,9 +190,7 @@ public class LogbookActivity extends AppCompatActivity {
 
     //Add
     private void add(){
-        Date currentTime = Calendar.getInstance().getTime();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE, MMMM dd, yyyy 'at' HH:mm:ss");
-        String cTime = simpleDateFormat.format(currentTime);
+
 
         String flightTime=timeTxt.getText().toString();
         String dateLog = date_view.getText().toString();
@@ -205,8 +204,9 @@ public class LogbookActivity extends AppCompatActivity {
             else {
                 //Add
                 if (!dateLog.isEmpty()) {
-                    adapter.add(cTime + "\n[" + dateLog + "]    " + flightTime + " Hours");
+                    adapter.add( "[" + dateLog + "]    " + flightTime + " Hours");
                     saveEntries();
+                    total = total + (Double.parseDouble(flightTime));
                 }
 
                 //Refresh
@@ -216,7 +216,7 @@ public class LogbookActivity extends AppCompatActivity {
                 timeTxt.setText("");
                 date_view.setText("");
 
-                Toast.makeText(getApplicationContext(),"Successfully Added!" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Successfully Added!" + total, Toast.LENGTH_SHORT).show();
             }
         }
         else {
@@ -281,6 +281,7 @@ public class LogbookActivity extends AppCompatActivity {
 
     //clear
     private void clear(){
+        total=0;
         adapter.clear();
         saveEntries();
     }

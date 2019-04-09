@@ -13,11 +13,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BluetoothSettingActivity"></activity>
-        <activity android:name=".BluetoothActivity" />
-        <activity android:name=".GestureActivity" />
-        <activity android:name=".MissionActivity" />
-        <activity android:name=".ActivitySplash">
+        <activity android:name=".BluetoothSettingActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".BluetoothActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".GestureActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MissionActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ActivitySplash"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,33 +33,41 @@
         <activity
             android:name=".DifficultyActivity"
             android:parentActivityName=".AwarenessActivity"
+            android:screenOrientation="portrait"
             />
         <activity
             android:name=".AltcorrectionActivity"
             android:parentActivityName=".CalculationsActivity"
-            android:label="  Altitude Correction Calculator"/>
+            android:label="  Altitude Correction Calculator"
+            android:screenOrientation="portrait"/>
 
         <activity android:name="WeightAndBalance"
             android:parentActivityName=".CalculationsActivity"
             android:label=" Weight and Balance Calculator"
+            android:screenOrientation="portrait"
             />
 
         <activity
             android:name=".LogbookActivity"
             android:parentActivityName=".MainActivity"
-            android:label="                   Logbook"/>
+            android:label="                   Logbook"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".DictionaryActivity"
             android:parentActivityName=".MainActivity"
-            android:label="                   SKYbrary"/>
+            android:label="                   SKYbrary"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".AwarenessActivity"
             android:parentActivityName=".MainActivity"
-            android:label="        Awareness Test"/>
+            android:label="        Awareness Test"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".CalculationsActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

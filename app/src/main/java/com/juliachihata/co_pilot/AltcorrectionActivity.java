@@ -80,7 +80,7 @@ public class AltcorrectionActivity extends AppCompatActivity {
                     }
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),"Please complete the data entries",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Warning: Field is empty",Toast.LENGTH_SHORT).show();
                 }
 
             }
