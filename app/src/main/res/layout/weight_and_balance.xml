@@ -21,7 +21,7 @@
             android:layout_marginTop="36dp"
             android:text="Insert the following Weights:"
             android:textColor="#FFF"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.134"
@@ -41,8 +41,10 @@
             android:src="@drawable/input"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -91,8 +93,10 @@
             android:src="@drawable/input"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -105,10 +109,14 @@
             android:layout_marginBottom="372dp"
             android:text="Plane Weight"
             android:textColor="#FFF"
+
+            android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/PlaneEditText"
@@ -120,12 +128,13 @@
             android:layout_marginEnd="239dp"
             android:layout_marginRight="239dp"
             android:layout_marginBottom="315dp"
+            android:textSize="20dp"
 
             android:digits="1234567890."
             android:ems="10"
             android:hint="(lb)"
             android:inputType="number"
-            android:textColor="@android:color/holo_blue_light"
+            android:textColor="#FF3698EE"
             android:textColorHint="#7D7D7D"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -144,10 +153,14 @@
             android:layout_marginBottom="486dp"
             android:text="Fuel Weight"
             android:textColor="#FFF"
+
+            android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/FuelEditText"
@@ -162,8 +175,9 @@
             android:digits="1234567890."
             android:ems="10"
             android:hint="(lb)"
+            android:textSize="20dp"
             android:inputType="number"
-            android:textColor="@android:color/holo_blue_light"
+            android:textColor="#FF3698EE"
             android:textColorHint="#7D7D7D"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -182,10 +196,14 @@
             android:layout_marginBottom="372dp"
             android:text="Passenger Weight"
             android:textColor="#FFF"
+            android:textSize="17dp"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/PilotPassEditText"
@@ -198,11 +216,12 @@
             android:layout_marginRight="68dp"
             android:layout_marginBottom="316dp"
             android:autofillHints=""
+            android:textSize="20dp"
             android:digits="1234567890."
             android:ems="10"
             android:hint="(lb)"
             android:inputType="number"
-            android:textColor="@android:color/holo_blue_light"
+            android:textColor="#FF3698EE"
             android:textColorHint="#7D7D7D"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -254,10 +273,13 @@
             android:layout_marginBottom="486dp"
             android:text="Baggage Weight"
             android:textColor="#FFFF"
+            android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/BaggageAreaEditText"
@@ -271,9 +293,10 @@
             android:layout_marginBottom="431dp"
             android:digits="1234567890."
             android:ems="10"
+            android:textSize="20dp"
             android:hint="(lb)"
             android:inputType="number"
-            android:textColor="@android:color/holo_blue_light"
+            android:textColor="#FF3698EE"
             android:textColorHint="#7D7D7D"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -290,6 +313,7 @@
             android:layout_marginTop="436dp"
             android:layout_marginBottom="127dp"
             android:text="SumWeight"
+            android:textSize="20dp"
             android:textColor="#FFFF"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -307,6 +331,8 @@
             android:text="SumMoments"
             android:textColor="#FFFF"
             android:textStyle="bold"
+            android:textSize="20dp"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -324,6 +350,7 @@
             android:textColor="#FFFF"
             android:background="@drawable/buttonshape"
             android:text="Calculate"
+            android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

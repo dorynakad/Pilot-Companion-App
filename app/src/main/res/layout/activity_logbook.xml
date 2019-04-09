@@ -113,7 +113,7 @@
         android:backgroundTint="@color/abc_primary_text_material_dark"
         android:hint="    #"
         android:inputType="numberDecimal"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="#FF3698EE"
         android:textColorHint="@android:color/darker_gray"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
