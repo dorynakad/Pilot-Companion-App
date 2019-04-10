@@ -28,6 +28,7 @@ public class AwarenessActivity extends AppCompatActivity {
     SeekBar timerSeekBar;
     Boolean counterIsActive = false;
     Button goButton,contButton;
+    MenuItem settingsBtn;
     boolean showSettingsButton;
     int red = android.R.color.holo_red_dark;
     int green = android.R.color.holo_green_dark;
@@ -111,7 +112,6 @@ public class AwarenessActivity extends AppCompatActivity {
 
         counterIsActive = true;
         //settingsButton.setClickable(false);
-        showSettingsButton = false;
         timerSeekBar.setEnabled(false);
         goButton.setBackgroundResource(R.drawable.buttonstop);
         goButton.setText("STOP FLIGHT");
@@ -243,13 +243,14 @@ public class AwarenessActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_settings, menu);
+        settingsBtn = menu.findItem(R.id.action_settings);
         return true;
     }
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
-        menu.findItem(R.id.action_settings).setVisible(showSettingsButton);
+        settingsBtn.setVisible(showSettingsButton);
         return true;
     }
 
