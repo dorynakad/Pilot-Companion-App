@@ -28,8 +28,7 @@ public class AwarenessActivity extends AppCompatActivity {
     SeekBar timerSeekBar;
     Boolean counterIsActive = false;
     Button goButton,contButton;
-//    ImageButton settingsButton;
-//    MenuItem settingsBtn;
+    boolean showSettingsButton;
     int red = android.R.color.holo_red_dark;
     int green = android.R.color.holo_green_dark;
     int mission;
@@ -46,7 +45,7 @@ public class AwarenessActivity extends AppCompatActivity {
         progress = timerSeekBar.getProgress();
         updateTimer(progress);
         //settingsButton.setVisibility(View.VISIBLE);
-//        settingsBtn.setVisible(true);
+        showSettingsButton = true;
         timerSeekBar.setProgress(progress);
         timerSeekBar.setEnabled(true);
         goButton.setText("START FLIGHT");
@@ -70,7 +69,7 @@ public class AwarenessActivity extends AppCompatActivity {
     private void startTimer() {
         contButton.setVisibility(View.INVISIBLE);
         //settingsButton.setVisibility(View.INVISIBLE);
-//        settingsBtn.setVisible(false);
+        showSettingsButton = false;
         endTime = System.currentTimeMillis() + timeleftms;
         Toast.makeText(getApplicationContext(),timeleftms+"",Toast.LENGTH_SHORT).show();
         SharedPreferences preferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
@@ -112,6 +111,7 @@ public class AwarenessActivity extends AppCompatActivity {
 
         counterIsActive = true;
         //settingsButton.setClickable(false);
+        showSettingsButton = false;
         timerSeekBar.setEnabled(false);
         goButton.setBackgroundResource(R.drawable.buttonstop);
         goButton.setText("STOP FLIGHT");
@@ -190,7 +190,7 @@ public class AwarenessActivity extends AppCompatActivity {
         timerSeekBar.setMax(eft/2);
 
         //settingsButton.setVisibility(View.VISIBLE);
-//        settingsBtn.setVisible(true);
+        showSettingsButton = true;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             timerSeekBar.setMin(10);
         }
@@ -224,7 +224,7 @@ public class AwarenessActivity extends AppCompatActivity {
                 counterIsActive = false;
                 contButton.setVisibility(View.VISIBLE);
                 //settingsButton.setVisibility(View.INVISIBLE);
-//                settingsBtn.setVisible(false);
+                showSettingsButton = false;
                 counterIsActive = true;
                 //settingsButton.setClickable(false);
                 timerSeekBar.setEnabled(false);
@@ -249,7 +249,7 @@ public class AwarenessActivity extends AppCompatActivity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
-        menu.findItem(R.id.action_settings).setVisible(counterIsActive);
+        menu.findItem(R.id.action_settings).setVisible(showSettingsButton);
         return true;
     }
 
@@ -276,7 +276,6 @@ public class AwarenessActivity extends AppCompatActivity {
         goButton = findViewById(R.id.startflight_button);
         contButton = findViewById(R.id.continue_button);
         //settingsButton = findViewById(R.id.settings_button);
-//        settingsBtn = findViewById(R.id.action_settings);
         goButton.setVisibility(View.VISIBLE);
         contButton.setVisibility(View.INVISIBLE);
         goButton.setBackgroundResource(R.drawable.buttonstart);
