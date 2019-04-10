@@ -337,7 +337,7 @@ public class LogbookActivity extends AppCompatActivity {
         day = calendar.get(Calendar.DAY_OF_MONTH);
         month = calendar.get(Calendar.MONTH);
         year = calendar.get(Calendar.YEAR);
-        DatePickerDialog dpd = new DatePickerDialog(LogbookActivity.this, new DatePickerDialog.OnDateSetListener() {
+        DatePickerDialog dpd = new DatePickerDialog(LogbookActivity.this, R.style.AppTheme_DialogTheme, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int y, int m, int d) {
                 date_view.setText(m + " / " + d + " / " + y);
