@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.gesture.Gesture;
 import android.media.MediaPlayer;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -127,7 +128,7 @@ public class GestureActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        finish();
+      //  finish();
     }
 
     private void msg(String s) {
@@ -168,6 +169,8 @@ public class GestureActivity extends AppCompatActivity {
 
             if (!ConnectSuccess) {
                 // msg("Connection Failed. Is it a SPP Bluetooth? Try again.");
+
+                //TODO dont let it keep on looping
 
                 msg("Turn On Sensor ");
                 Intent intent = getIntent();
@@ -269,6 +272,7 @@ public class GestureActivity extends AppCompatActivity {
 
         at.start();
 
+
     }
 
     @Override
@@ -302,6 +306,15 @@ public class GestureActivity extends AppCompatActivity {
             cancel = true;
         }
 
+
+        public void stopThread()
+        {
+            at.interrupt();
+            timer.cancel();
+        }
+
+        boolean interrupted = false;
+
         @Override
         public void run() {
             for (j = 0; j < repeat; j++) {
@@ -331,6 +344,9 @@ public class GestureActivity extends AppCompatActivity {
 
                                             } catch (IOException e) {
                                                 msg("Error");
+
+                                                interrupted = true;
+                                                //stopThread();
                                             }
                                         }
                                         if (read == 1) {
@@ -381,6 +397,9 @@ public class GestureActivity extends AppCompatActivity {
 
                                             } catch (IOException e) {
                                                 msg("Error");
+                                                //stopThread();
+                                                interrupted=true;
+
                                             }
                                         }
                                         if (read == 2) {
@@ -431,6 +450,8 @@ public class GestureActivity extends AppCompatActivity {
 
                                             } catch (IOException e) {
                                                 msg("Error");
+                                                //stopThread();
+                                                interrupted=true;
                                             }
                                         }
                                         if (read == 3) {
@@ -481,6 +502,9 @@ public class GestureActivity extends AppCompatActivity {
 
                                             } catch (IOException e) {
                                                 msg("Error");
+                                                //stopThread();
+                                                interrupted=true;
+
                                             }
                                         }
                                         if (read == 4) {
@@ -530,6 +554,12 @@ public class GestureActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
+
+                if(interrupted)
+                {
+                    stopThread();
+                    break;
+                }
             }
 
 
@@ -559,11 +589,17 @@ public class GestureActivity extends AppCompatActivity {
                         resultText.setText("Failed\nYou Are "+ String.format( "%.2f", fin ) + "% Aware" );
                         messageText.setText("Be Careful! Alerting The ATC");
                         resultText.setTextColor(getResources().getColor(red));
+
+                        //
+
                     }
+
 
                     resultLayout.setVisibility(View.VISIBLE);
                     missionLayout.setVisibility(View.INVISIBLE);
-                    sleep(500);
+                    sleep(5000);
+                    goToAwareness(interrupted);
+
                 }
             });
         }
@@ -571,4 +607,19 @@ public class GestureActivity extends AppCompatActivity {
 
     }
 
+    public void goToAwareness(boolean interrupted)
+    {
+        Intent intent = new Intent(this, AwarenessActivity.class);
+
+        if(!interrupted) {
+            intent.putExtra("isInterrupted", "NotInterrupt");
+        }
+        else
+            intent.putExtra("isInterrupted", "Interrupt");
+
+
+
+        startActivity(intent);
+
+    }
 }
